@@ -1,0 +1,494 @@
+body{
+	margin: 0;
+	padding: 0;
+
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+header{
+	width: 100%;
+	top: 0;
+	margin: 0;
+	position:fixed;
+    z-index:100;
+    left:;
+    right:;
+    text-align: center;
+    clear: both;
+    border-radius: 1px;
+	height: 48px;
+}
+
+
+
+/*----------header 背景----------*/
+div.header_bg{
+	width: 100%;
+	height: 48px;
+	background-color: black;
+	opacity: 0.75;
+}
+/*----------header背景----------*/
+
+
+
+
+/*----------nav 导航栏----------*/
+
+div.nav {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: %;
+    clear: both;
+    height: 40px;
+}
+
+ul.nav {
+	
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+	height:48px;
+}
+li.icon {
+
+    display: inline-block;
+    width: 16.33%;
+    text-align:center;
+    clear: both;
+	transform: translate(0, -82%);/*更改header group 10 文字时需要修改高度*/
+}
+span.t_001{
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 2.5em;
+	color: white;
+    display: block;
+    padding: 14.2px;
+    text-decoration: none;
+	font-weight: 1;
+	height: 30;
+
+
+}
+
+li.opt{
+    display: inline-block;
+    width: 16.33%;
+    text-align:center;
+    clear: both;
+	transform: translate(0, -165%);/*更改header group 10 文字时需要修改高度*/
+}
+a.opt {
+    font-size: 1em;
+    color: white;
+    display: block;
+    padding: 14.2px;
+    text-decoration: none;
+	font-weight: 1;
+	font-weight: bold;
+
+    
+}
+/*----------子导航----------*/
+
+ul.sub {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    border-top: 0;
+    margin-left: 0%;
+    z-index: -100;
+	width:50px;
+	transform: translate(0, -2px);
+
+}
+li.sub {
+    display: block;
+	width:100%;
+	height:30px;
+	font-size:0.9em;
+	display: inline-block;
+	clear: both;
+	border-bottom: 2px solid white;
+	transform: translate(-20px, 1px);/*------更改sub-this需要更改px-------*/
+
+}
+li.opt:hover ul.sub {
+    display: block;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+    width: auto;
+	border-top:10px, black;
+}
+a.sub{
+	font-size: 1em;
+    color: white;
+    display: block;
+    padding: 14.2px;
+    text-decoration: none;
+	height: 40px;
+	transform: translate(-15px,-8px);	
+	text-align:center;
+	width: 100%;
+
+}
+a.sub-this{
+	font-size: 1em;
+    color: red;
+    display: block;
+    padding: 14.2px;
+    text-decoration: none;
+	height: 40px;
+	transform: translate(-15px, -8px);
+	font-weight: bold;
+	text-align:center;
+	width: 100%
+}
+li.sub:hover a{
+	color: orange;
+}
+/*----------子导航----------*/
+
+/*----------nav 导航栏----------*/
+
+
+/*----------页脚----------*/
+
+/*----------底部切换----------*/
+
+footer{
+	background-image: url(../img/pic_back1.jpg);
+	overflow: hidden;
+}
+
+div.diff_top{
+	height:400px;
+	transform: translate(0, 157px);
+}
+div.footer{
+	direction:absolute;
+	width:1300px;
+	height:359px;
+	margin:0 auto;
+}
+div.topic_flow ul {
+	width: 1000px;
+	height: 400px;
+	margin: 100px auto;
+	list-style: none;
+	overflow: hidden;
+
+}
+
+div.topic_flow li {
+	width: 160px;
+	height: 360px;
+	float: left;
+	transition: all 0.1s linear;
+	position: relative;
+}
+li.last{
+	width: 500px;
+}
+div.topicflow ul:hover li {
+	width: 32px;
+}
+div.topic_flow ul li:hover {
+	width: 500px;
+}
+
+div.topic_flow ul li:hover a.background{
+	background-color:transparent;
+}
+div.topic_flow ul li:hover a.text{
+	opacity: 0;
+}
+div.topic_flow ul li:hover a.touch{
+	opacity: 1;
+}
+div.topic_flow ul li:hover a.touch-s{
+	opacity: 1;
+	color:black;
+}
+
+a.text{
+	position: absolute;
+	left: 10px;
+	bottom: 0;
+	width: 600px;
+	height: 10%;
+	line-height: 30px;
+	color: white;
+	-moz-transition: all 0.2s ease; 
+	-webkit-transition: all 0.2s ease; 
+	transition: all 0.2s ease; 
+	font-family: 'Anton', sans-serif;
+}
+
+a.touch{
+	position: absolute;
+	left: 20px;
+	bottom: 0;
+	width: 600px;
+	height: 10%;
+	line-height: 30px;
+	color: white;
+	-moz-transition: all 0.2s ease; 
+	-webkit-transition: all 0.2s ease; 
+	transition: all 0.2s ease; 
+	opacity: 0;
+	transform: translate(0, -860%);
+	font-size: 4em;
+	line-height: 93%; 	
+	font-family: 'Anton', sans-serif;
+}
+a.touch-s{
+	position: absolute;
+	left: 20px;
+	bottom: 0;
+	width: 600px;
+	height: 10%;
+	line-height: 30px;
+	color: white;
+	-moz-transition: all 0.2s ease; 
+	-webkit-transition: all 0.2s ease; 
+	transition: all 0.2s ease; 
+	opacity: 0;
+	transform: translate(0, -860%);
+	font-size: 4em;
+	line-height: 93%; 	
+	font-family: 'Anton', sans-serif;
+}
+
+
+a.background {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 600px;
+	height: 100%;
+	background:black;
+	line-height: 30px;
+	opacity: 0.3;
+}
+/*----------底部切换----------*/
+div.foot{
+	margin-top: 200px;
+	height: 30px;
+
+	background-color: black;
+	opacity: 0.8;
+	
+}
+a.foot{
+	text-decoration:none;
+	color: red;
+}
+div.foot p{
+	transform: translate(45%, 5px);
+	color:white;
+}
+div.cut{
+	height:60px;
+	background-image: url(../img/pic_cut.jpg);
+
+}
+img.cut{
+	transform: translate(50px, -47px);
+	position: absolute;
+
+}
+
+
+/*----------页脚----------*/
+div.blank{
+	direction: absolute;
+	padding:0;
+	margin:0 auto;
+	width: 100%;
+	height:48px;
+	background-color:black;
+}
+/*---------------------------------------*/
+div.kungfu_t{
+	direction:absolute;
+	width: 100%;
+	height: 300px;
+	background-color: rgba(255, 0, 0, 0.7);
+	overflow:hidden;
+
+}
+div.kungfu_c{
+	direction:absolute;
+	width:750px;
+	margin:0 auto;
+}
+p.kungfu_t{
+	direction:absolute;
+	font-size:7em;
+	font-family: 'Architects Daughter', cursive;
+	font-weight: bold;
+	transform:translate(178px,-68px);
+
+}
+p.kungfu_subt{
+	direction:absolute;
+	transform:translate(270px,-227px);
+	font-size:2em;
+	font-family: 'Caveat', cursive;
+	font-weight: bold;
+	color: ;/*-----------------------------------------------------------*/
+}
+
+div.Literature{
+	direction: absolute;
+	width: 1200px;
+	background-color: #FEFFEF;
+	-webkit-box-shadow: #666 0px 0px 2px;
+	margin: 0 auto;
+	height: 1630px;
+	overflow: hidden;
+}div.History{
+	direction: absolute;
+	width: 1200px;
+	background-color: #FEFFEF;
+	-webkit-box-shadow: #666 0px 0px 2px;
+	margin: 0 auto;
+	height: 1550px;
+	overflow: hidden;
+}
+div.Celebrity{
+	direction: absolute;
+	width: 1200px;
+	background-color: #FEFFEF;
+	-webkit-box-shadow: #666 0px 0px 2px;
+	margin: 0 auto;
+	height: 2100px;
+	overflow: hidden;
+}
+div.Shaolin{
+	direction: absolute;
+	width: 1200px;
+	background-color: #FEFFEF;
+	-webkit-box-shadow: #666 0px 0px 2px;
+	margin: 0 auto;
+	height: 1300px;
+	overflow: hidden;
+}
+p.kungfu_name{
+	font-family: 'Anton', sans-serif;
+	padding: 10px;
+	font-size:2em;	
+}
+p.kungfu_name2{
+	font-family: 'Anton', sans-serif;
+	padding: 10px;
+	font-size:2em;
+}
+p.cele_dis{
+	direction:absolute;
+	width:587px;
+	margin-left: 50px;
+	font-size: 1.4em;
+	font-weight:100;
+}
+p.cele_dis2{
+	direction:absolute;
+	width:587px;
+	margin-left: 50px;
+	font-size: 1.4em;
+	font-weight:100;
+}
+img.lee_pic{
+	direction:absolute;
+	transform:translate(650px,-395px);
+}
+div.lee_pic{
+	direction:absolute;
+	width:750px;
+	margin:0 auto;
+	transform:translate(0, -300px);
+}
+p.film_dis{
+	font-weight: 300;
+	transform: translate(190px,0);
+}
+div.chen_1{
+	transform: translate(0,-250px);
+}
+img.tig{
+	direction:absolute;
+	float:left;
+}
+img.dra{
+	direction:absolute;
+	float:right;
+	transform:translate(0, -480px);
+}
+p.his_d{
+	direction:absolute;
+	width:587px;
+	margin-left: 50px;
+	font-size: 1.4em;
+	font-weight:100;
+}
+p.his_d2{
+	direction:absolute;
+	width:1000px;
+	margin-left: 50px;
+	font-size: 1.4em;
+	font-weight:100;
+}
+div.weapons{
+	direction:absolute;
+	width:10px;
+	margin: 0 auto;
+}
+img.weapons{
+	direction:absolute;
+	transform:translate(70px, -750px);
+	
+}
+div.fighter{
+	direction:absolute;
+	width:770px;
+	margin: 0 auto;
+	transform:translate(0, -270px);
+}
+img.novel_1{
+	direction:absolute;
+	transform:translate(650px,-950px);
+}
+img.novel_2{
+	direction:absolute;
+	transform:translate(200px,-450px);
+}
+img.novel_3{
+	direction:absolute;
+	transform:translate(-30px,-1000px);
+}
+
+img.shaolin_pic{
+	direction:absolute;
+	transform:translate(650px,-720px);
+}
+p.shaolin{
+	direction:absolute;
+	width:1000px;
+	margin-left: 50px;
+	font-size: 1.4em;
+	font-weight:100;
+
+}
+img.shaolin2{
+	direction:absolute;
+	transform:translate(-90px,0);
+}
+img.shaolin3{
+	direction:absolute;
+	transform:translate(400px,-400px);
+}

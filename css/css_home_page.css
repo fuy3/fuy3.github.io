@@ -1,0 +1,369 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: url("../img/pic_home_bg_c.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-attachment:fixed;
+}
+header{
+	width: 100%;
+	top: 0;
+	margin: 0;
+	position:fixed;
+    z-index:100;
+    left:;
+    right:;
+    text-align: center;
+    clear: both;
+    border-radius: 1px;
+	height: 48px;
+}
+
+
+
+/*----------header 背景----------*/
+div.header_bg{
+	width: 100%;
+	height: 48px;
+	background-color: black;
+	opacity: 0.75;
+}
+/*----------header背景----------*/
+
+
+/*----------nav 导航栏----------*/
+
+div.nav {
+    width: 1000px;
+    margin:  0 auto;
+    text-align: left;
+    margin-top: %;
+    clear: both;
+    height: 40px;
+}
+
+ul.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+	height:48px;
+}
+li.icon {
+
+    display: inline-block;
+    width: 16.33%;
+    text-align:center;
+    clear: both;
+	transform: translate(0, -82%);/*更改header group 10 文字时需要修改高度*/
+}
+span.t_001{
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 2.5em;
+	color: white;
+    display: block;
+    padding: 14.2px;
+    text-decoration: none;
+	font-weight: 1;
+	height: 30;
+
+
+}
+
+li.opt{
+    display: inline-block;
+    width: 16.33%;
+    text-align:center;
+    clear: both;
+	transform: translate(0, -165%);/*更改header group 10 文字时需要修改高度*/
+}
+a.opt {
+    font-size: 1em;
+    color: white;
+    display: block;
+    padding: 14.2px;
+    text-decoration: none;
+	font-weight: 1;
+	font-weight: bold;
+
+    
+}
+/*----------子导航----------*/
+
+ul.sub {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    border-top: 0;
+    margin-left: 0%;
+    z-index: -100;
+	width:50px;
+	transform: translate(0, -2px);
+
+}
+li.sub {
+    display: block;
+	width:100%;
+	height:30px;
+	font-size:0.9em;
+	display: inline-block;
+	clear: both;
+	border-bottom: 2px solid white;
+	transform: translate(-20px, 1px);
+
+}
+li.opt:hover ul.sub {
+    display: block;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+    width: auto;
+	border-top:10px, black;
+}
+a.sub{
+	font-size: 1em;
+    color: white;
+    display: block;
+    padding: 14.2px;
+    text-decoration: none;
+	height: 40px;
+	transform: translate(-15px,-8px);	
+	text-align:center;
+	width: 100%;
+
+}
+a.sub-this{
+	font-size: 1em;
+    color: red;
+    display: block;
+    padding: 14.2px;
+    text-decoration: none;
+	height: 40px;
+	transform: translate(-15px, -8px);
+	font-weight: bold;
+	text-align:center;
+	width: 100%
+}
+li.sub:hover a{
+	color: orange;
+}
+/*----------子导航----------*/
+
+/*----------nav 导航栏----------*/
+
+
+/*----------页脚----------*/
+
+footer{
+	overflow: hidden;
+	position:absolute;
+	bottom:0;
+	width: 100%;
+	pointer-events: none;
+}
+
+div.foot{
+	margin-top: 200px;
+	height: 30px;
+
+	background-color: black;
+	opacity: 0.8;
+	
+}
+a.foot{
+	text-decoration:none;
+	color: red;
+}
+div.foot p{
+	transform: translate(45%, 5px);
+	color:white;
+}
+div.cut{
+	height:60px;
+	background-image: url(../img/pic_cut.jpg);
+
+}
+img.cut{
+	transform: translate(150px, 10px);
+	position: absolute;
+
+}
+
+/*----------页脚----------*/
+
+
+/*----------相册----------*/
+div.photo {
+	margin:0;
+	margin-top:3%;
+    display: table;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	
+
+}
+
+ul.photo{
+	list-style-type: none;
+	margin:0px;
+	transform: translate(15px,-29px);
+}
+div.photo_z{
+	height:278px;
+	width:510px;
+}
+
+div.photo_s {
+    display: table-cell;
+	height:278px;
+}
+div.photo_img{
+	position:absolute;
+	height:278px;
+	width:510px;
+    margin: 0;
+	line-height:0;
+	overflow:hidden;
+}
+img.p2{
+	transition: all 1s;
+}
+div.photo_s:hover img{
+	position:absolute;
+	transform: scale(1.07);  	 
+	
+
+}
+a.title_p{
+	position:absolute;
+	font-family: 'Russo One', sans-serif;
+	font-size: 4.5em;
+	font-weight: bold;
+	color: white;
+	height: 170px;
+	width:510px;
+	text-align:center;
+	line-height:76%;
+	text-decoration: none;
+	opacity:0;
+	transition: all 0.4s;
+	
+}
+a.photo_bg1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 510px;
+	height: 278px;
+	background-color:#282828;
+	line-height: 0;
+	opacity: 0;
+	transform: translate(40px,0);
+	transition: all 0.7s;
+}
+a.photo_bg3 {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 510px;
+	height: 278px;
+	background-color:#282828;
+	line-height: 0;
+	opacity: 0;
+	transform: translate(40px,0);
+	transition: all 0.7s;
+}
+a.photo_bg2 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 510px;
+	height: 278px;
+	background-color:#282828;
+	line-height: 30px;
+	opacity: 0;
+	transform: translate(550px,0);
+	transition: all 0.7s;
+}
+a.photo_bg4 {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 510px;
+	height: 278px;
+	background-color:#282828;
+	line-height: 30px;
+	opacity: 0;
+	transform: translate(550px,0);
+	transition: all 0.7s;
+}
+div.photo_s div.photo_z:hover a.photo_bg1 {
+	opacity: 0.6;
+
+}
+div.photo_s div.photo_z:hover a.photo_bg3 {
+	opacity: 0.6;
+
+}
+div.photo_s div.photo_z:hover a.photo_bg2 {
+	opacity: 0.6;
+
+}
+div.photo_s div.photo_z:hover a.photo_bg4 {
+	opacity: 0.6;
+
+}
+div.photo_bg{
+	pointer-events: none;
+	z-index:0;
+}
+ul.sub_p{
+	list-style-type: none;
+	margin:0px;
+	padding:0;
+	height:0;
+	direction:absolute;
+	transform: translate(0,200px);
+	background-color:red;
+
+}
+li.sub_p{
+	direction:absolute;
+	display: inline-block;
+	margin-left:17px;
+	width:102px;
+	height:78px;
+	overflow:hidden;
+}
+
+a.sub_p{
+	direction:absolute;
+	color:white;	
+	text-overflow:ellipsis;
+	height:20px;
+	text-align:center;
+	display: inline-block;
+	font-family: 'Courgette', cursive;
+	font-size:1.2em;
+	float: right;
+	line-height:90%;
+	text-decoration: none;
+	transform: translate(0,100px);
+	transition: transform 0.3s;
+	opacity:0;
+}
+
+div.photo_s div.photo_z:hover a.title_p {
+	opacity: 1;
+
+}
+div.photo_s div.photo_z:hover a.sub_p {
+	transform: translatey(9px);
+	opacity:1;
+
+}
+/*----------相册----------*/
