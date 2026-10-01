@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PerceptEEG: Zero-Shot EEG-to-Image Retrieval | Yiming Fu</title>
+<meta name="description" content="PerceptEEG diagnoses where EEG and pretrained visual features disagree, then aligns EEG with a mid-level visual target for zero-shot EEG-to-image retrieval: 65.85% intra-subject Recall@1 on THINGS-EEG2. Project page, paper draft and video by Yiming Fu.">
+<link rel="icon" href="images/favicon.png">
+<link rel="canonical" href="https://fuy3.github.io/perceptEEG.html">
+<meta name="author" content="Yiming Fu">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Yiming Fu">
+<meta property="og:title" content="PerceptEEG: Zero-Shot EEG-to-Image Retrieval">
+<meta property="og:description" content="PerceptEEG diagnoses where EEG responses and pretrained visual features disagree, then aligns them for zero-shot EEG-to-image retrieval. Project page, paper draft and video by Yiming Fu.">
+<meta property="og:url" content="https://fuy3.github.io/perceptEEG.html">
+<meta property="og:image" content="https://fuy3.github.io/images/perceptEEG-overview.png">
+<meta property="og:image:alt" content="Overview of the PerceptEEG framework">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ScholarlyArticle",
+ "headline": "PerceptEEG: Diagnosing and Bridging the EEG–Visual Representation Gap for Zero-Shot EEG-to-Image Retrieval",
+ "author": {
+  "@type": "Person",
+  "name": "Yiming Fu",
+  "url": "https://fuy3.github.io/"
+ },
+ "sourceOrganization": {
+  "@type": "CollegeOrUniversity",
+  "name": "The University of Manchester"
+ },
+ "datePublished": "2026",
+ "url": "https://fuy3.github.io/perceptEEG.html",
+ "image": "https://fuy3.github.io/images/perceptEEG-overview.png",
+ "creativeWorkStatus": "Draft",
+ "keywords": [
+  "EEG",
+  "brain-computer interface",
+  "CLIP",
+  "contrastive learning",
+  "zero-shot retrieval",
+  "representation alignment"
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--ink:#1F2328;--muted:#5F6775;--line:#E5E8EE;--soft:#F6F7FA;--accent:#4263EB}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#14161B;--ink:#E7E9EE;--muted:#9AA2B1;--line:#2A2F3A;--soft:#1B1E25;--accent:#748FFC}}
+:root[data-theme="dark"]{--bg:#14161B;--ink:#E7E9EE;--muted:#9AA2B1;--line:#2A2F3A;--soft:#1B1E25;--accent:#748FFC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:16.5px;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+.back{display:inline-block;margin:24px 0 0;font-size:15px}
+header{text-align:center;padding:36px 0 8px}
+h1{font-size:30px;line-height:1.25;margin:0 0 12px}
+.authors{margin:0}
+.aff{color:var(--muted);margin:0 0 6px}
+.status{display:inline-block;font-size:14px;border:1px solid var(--line);border-radius:4px;padding:0 10px;color:var(--muted)}
+.links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.links a{border:1px solid var(--line);border-radius:6px;padding:5px 16px;font-weight:700;font-size:15px;color:var(--ink)}
+.links a:hover{border-color:var(--ink);text-decoration:none}
+.links .off{border:1px dashed var(--line);border-radius:6px;padding:5px 16px;font-size:15px;color:var(--muted)}
+.fig{background:var(--soft);border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:14px;aspect-ratio:16/7;margin:24px 0 8px}
+.fig img{width:100%;height:100%;object-fit:contain}
+.video{position:relative;aspect-ratio:16/9;margin:24px 0 8px;border-radius:8px;overflow:hidden;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.cap{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+h2{font-size:21px;margin:36px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+p{margin:0 0 12px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{text-align:left;padding:6px 12px 6px 0;border-bottom:1px solid var(--line)}
+th{color:var(--muted)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+pre{background:var(--soft);padding:14px;border-radius:6px;overflow-x:auto;font-size:13.5px}
+.pic{margin:24px 0 8px}.pic img{display:block;width:100%;height:auto;border-radius:6px;background:#fff}
+.video .poster{position:absolute;inset:0;display:block;background:#111 url(images/perceptEEG-overview.png) center/contain no-repeat}
+.video .poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video .play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:rgba(20,22,27,.8)}
+.video .play::after{content:"";position:absolute;left:27px;top:14px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}
+.video .poster:hover .play{background:#e62117}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 4px}
+.stats div{background:var(--soft);border-radius:8px;padding:12px 14px}
+.stats b{display:block;font-size:22px;line-height:1.2}
+.stats span{display:block;font-size:13.5px;color:var(--muted);line-height:1.4;margin-top:4px}
+h3{font-size:17px;margin:26px 0 8px}
+.finds{padding-left:20px}.finds li{margin:0 0 10px}
+.tbl{overflow-x:auto}
+tr.us td{background:var(--soft)}
+@media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+footer{margin-top:56px;border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:14px}
+@media (max-width:640px){.wrap{padding:0 16px}h1{font-size:24px}.fig{aspect-ratio:4/3}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html#proj-perceptEEG">Yiming Fu</a>
+
+  <header>
+    <h1>PerceptEEG: Diagnosing and Bridging the EEG–Visual Representation Gap for Zero-Shot EEG-to-Image Retrieval</h1>
+    <p class="authors">Yiming Fu</p>
+    <p class="aff">MSc dissertation, The University of Manchester, 2026</p>
+    <span class="status">Draft, in preparation for submission</span>
+    <div class="links">
+      <a href="papers/PerceptEEG_draft.pdf">Paper (PDF)</a>
+      <a href="https://youtu.be/3hbdzn6Ga-w">Video</a>
+      <!-- TODO: add the repository link when the code is public -->
+      <span class="off">Code (coming soon)</span>
+    </div>
+  </header>
+
+  <!-- The player loads only when clicked. YouTube refuses embeds that arrive without a referrer (error 153),
+       so the iframe sets an explicit referrer policy, and a page opened from disk goes straight to YouTube. -->
+  <div class="video" id="video" data-yt="3hbdzn6Ga-w">
+    <a class="poster" href="https://youtu.be/3hbdzn6Ga-w" aria-label="Play the PerceptEEG project video">
+      <img src="https://i.ytimg.com/vi/3hbdzn6Ga-w/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <span class="play" aria-hidden="true"></span>
+    </a>
+  </div>
+  <p class="cap">Project video. <a href="https://youtu.be/3hbdzn6Ga-w">Open on YouTube</a></p>
+
+  <div class="stats" aria-label="Main results on THINGS-EEG2, 200-way zero-shot retrieval">
+    <div><b>65.85%</b><span>intra-subject Recall@1, highest mean among compared methods</span></div>
+    <div><b>91.40%</b><span>intra-subject Recall@5</span></div>
+    <div><b>12.85%</b><span>cross-subject Recall@1 (LOSO), second among compared methods</span></div>
+    <div><b>79.4%</b><span>of full-data cross-subject Recall@1 kept with 25% of training concepts</span></div>
+  </div>
+
+  <h2>Abstract</h2>
+  <p>EEG-to-image retrieval identifies which image a person was viewing from their brain activity. Most methods align noisy EEG with fixed, semantically rich visual embeddings without first asking whether those targets suit EEG. This work studies that mismatch directly: what visual information EEG can recover, when and where it is supported, and which depth of a CLIP vision model corresponds best. The diagnosis shows a much larger mismatch for semantic than for perceptual information, points to the 100–300 ms window over posterior sensors, and favours an intermediate layer (Block 14) over the final one.</p>
+  <p>Guided by these findings, PerceptEEG combines a <b>Mid-level Visual Target (MVT)</b>, a compact, perceptually compatible image representation, with a <b>Windowed Spatiotemporal Residual Adapter (WSRA)</b> that refines EEG features within a bounded residual. On 200-way zero-shot retrieval on THINGS-EEG2 it reaches 65.85 ± 7.46% intra-subject and 12.85 ± 4.76% cross-subject Recall@1, and stays data-efficient when training concepts are reduced.</p>
+
+  <figure class="pic"><img src="images/perceptEEG-overview.png" alt="Overview: a diagnostic study of information, timing and visual depth informs the WSRA and MVT modules, evaluated by retrieval, low-data, ablation and representation analyses" loading="lazy"></figure>
+  <p class="cap">From diagnosis to design: three probes characterise the mismatch, their findings shape MVT and WSRA, and the model is evaluated through retrieval and representation analyses.</p>
+
+  <h2>1. Diagnosing the EEG–visual gap</h2>
+  <p>Before designing a model, three controlled probes on the ATM EEG encoder, across ten participants, ask what a good alignment target for EEG should look like.</p>
+  <ul class="finds">
+    <li><b>What is recoverable?</b> Relative to the image embedding, EEG recovers colour, structure and texture far better than semantics: cross-subject recoverability ratios are 0.62, 0.64 and 0.85 for the perceptual factors but only 0.075 for semantic category.</li>
+    <li><b>When and where?</b> The 100–300 ms window carries the most recoverable information for every factor, and the 24 posterior channels alone keep 95–98% of the all-channel perceptual scores; frontal and central channels are near chance.</li>
+    <li><b>Which visual depth?</b> Among sampled OpenCLIP ViT-H/14 blocks, the intermediate Block 14 gives the strongest correspondence (Recall@1 0.365 at 100–300 ms, against 0.275, 0.160 and 0.120 for Blocks 6, 22 and 32).</li>
+  </ul>
+  <figure class="pic"><img src="images/perceptEEG-diagnostics.jpg" alt="Recoverability ratios across ten subjects and absolute probe scores: perceptual factors are far more recoverable from EEG than semantics" loading="lazy"></figure>
+  <p class="cap">EEG-to-CLIP recoverability for ten subjects. Ratios below 1 mean EEG recovers less than the image itself; semantics falls furthest short.</p>
+
+  <h2>2. Method</h2>
+  <figure class="pic"><img src="images/perceptEEG-method.jpg" alt="PerceptEEG architecture: MVT pools and PCA-compresses Block 14 patch tokens; WSRA adds a bounded residual from three spatiotemporal branches to the ATM feature; a projection head aligns both with a symmetric multi-positive contrastive loss" loading="lazy"></figure>
+  <p class="cap">PerceptEEG. (a) MVT builds the image target; (b) WSRA refines the EEG feature; (c) both are aligned with a multi-positive contrastive objective and retrieved by cosine ranking.</p>
+  <ul class="finds">
+    <li><b>Mid-level Visual Target.</b> Patch tokens from Block 14 of a frozen OpenCLIP ViT-H/14 are pooled to a 2&times;2 grid, reduced to 256 dimensions with PCA fitted on training images only, and L2-normalised.</li>
+    <li><b>Windowed Spatiotemporal Residual Adapter.</b> Three parallel branches, a posterior 0–300 ms view motivated by the diagnosis and two broader all-channel views (300–600 ms and 0–1000 ms), are fused with fixed equal weights and added to the ATM feature as a bounded residual.</li>
+    <li><b>Alignment.</b> A projection head maps the refined EEG feature into the MVT space, trained with a symmetric multi-positive contrastive loss that treats repeated presentations of the same stimulus as positives.</li>
+  </ul>
+
+  <h2>3. Results</h2>
+  <h3>Zero-shot retrieval on THINGS-EEG2</h3>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>200-way retrieval (%)</th><th class="n">Intra R@1</th><th class="n">Intra R@5</th><th class="n">Cross R@1</th><th class="n">Cross R@5</th></tr></thead>
+    <tbody>
+      <tr><td>NICE (ICLR 2024)</td><td class="n">16.11</td><td class="n">43.63</td><td class="n">6.18</td><td class="n">21.44</td></tr>
+      <tr><td>ATM (NeurIPS 2024)</td><td class="n">27.10</td><td class="n">58.08</td><td class="n">11.88</td><td class="n">33.75</td></tr>
+      <tr><td>UBP (CVPR 2025)</td><td class="n">50.86</td><td class="n">79.67</td><td class="n">12.42</td><td class="n">33.38</td></tr>
+      <tr><td>NeuroBridge (AAAI 2026)</td><td class="n">63.22</td><td class="n">89.92</td><td class="n"><b>19.04</b></td><td class="n"><b>45.90</b></td></tr>
+      <tr class="us"><td>PerceptEEG</td><td class="n"><b>65.85</b></td><td class="n"><b>91.40</b></td><td class="n">12.85</td><td class="n">34.20</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="cap">Means over ten subjects. Intra: subject-specific training and testing. Cross: leave-one-subject-out.</p>
+
+  <h3>Ablation</h3>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>Recall@1 (%)</th><th class="n">Intra-subject</th><th class="n">Cross-subject</th></tr></thead>
+    <tbody>
+      <tr><td>Semantic-alignment baseline</td><td class="n">30.10</td><td class="n">6.70</td></tr>
+      <tr><td>+ MVT</td><td class="n">64.30</td><td class="n">9.75</td></tr>
+      <tr class="us"><td>+ MVT + WSRA (PerceptEEG)</td><td class="n"><b>65.85</b></td><td class="n"><b>12.85</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The compatible target accounts for most of the gain; the adapter adds a smaller increment within subjects and a larger one under transfer to unseen participants (+3.10 points).</p>
+
+  <h3>Learning from fewer concepts</h3>
+  <figure class="pic"><img src="images/perceptEEG-reduced-data.jpg" alt="Recall@1 and Recall@5 against the fraction of training concepts for PerceptEEG and ATM, intra- and cross-subject" loading="lazy"></figure>
+  <p class="cap">Recall against retained training-concept coverage; the 200-image test gallery is fixed.</p>
+  <p>With 25% of training concepts, PerceptEEG's intra-subject Recall@5 (65.25%) already exceeds ATM trained on all of them (56.95%), and cross-subject it keeps 79.4% of its full-data Recall@1 and 90.9% of Recall@5.</p>
+
+  <h3>Representation geometry</h3>
+  <figure class="pic"><img src="images/perceptEEG-similarity.jpg" alt="EEG–image cosine-similarity matrices for ATM and PerceptEEG, intra- and cross-subject; PerceptEEG shows a clearer diagonal" loading="lazy"></figure>
+  <p class="cap">EEG–image similarity for Subject 1; correct pairs lie on the diagonal.</p>
+  <p>In each model's retrieval space, representational similarity between EEG and image targets rises from 0.11 to 0.34 within subjects and from 0.08 to 0.24 across subjects, and the gap between matched and unmatched pairs widens accordingly.</p>
+
+  <h3>Examples</h3>
+  <figure class="pic"><img src="images/perceptEEG-examples.jpg" alt="Ground-truth images with the top-five retrievals from ATM and PerceptEEG in four cases: both successful, PerceptEEG only, ATM only and both failed" loading="lazy"></figure>
+  <p class="cap">Top-five retrievals for Subject 1. PerceptEEG tends to retrieve images that share colour and shape with the target.</p>
+
+  <h2>Limitations</h2>
+  <p>Cross-subject transfer remains the main open problem: PerceptEEG stays below NeuroBridge without subject-specific training. Each configuration was trained with a single seed, the ablation omits a WSRA-only condition, and the visual depth was selected on one participant and one backbone. Exploratory extensions that add a semantic branch or a cross-participant residual give no clear or only modest gains so far.</p>
+
+  <h2>Citation</h2>
+  <pre>@mastersthesis{fu2026perceptEEG,
+  title  = {PerceptEEG: Diagnosing and Bridging the EEG--Visual Representation Gap
+            for Zero-Shot EEG-to-Image Retrieval},
+  author = {Fu, Yiming},
+  school = {The University of Manchester},
+  year   = {2026},
+  note   = {MSc dissertation}
+}</pre>
+</div>
+<footer><div class="wrap">© 2026 Yiming Fu. </div></footer>
+<script>
+/* Lite YouTube player: swap the poster for the real player on click. */
+(function(){
+  var box=document.getElementById("video"),id=box.dataset.yt,poster=box.querySelector(".poster");
+  if(location.protocol==="file:")return;            // YouTube cannot verify a page opened from disk (error 153); the link opens YouTube instead
+  poster.addEventListener("click",function(ev){
+    ev.preventDefault();
+    var f=document.createElement("iframe");
+    f.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0&playsinline=1&origin="+encodeURIComponent(location.origin);
+    f.title="PerceptEEG project video";
+    f.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+    f.allowFullscreen=true;
+    f.setAttribute("referrerpolicy","strict-origin-when-cross-origin");
+    box.innerHTML="";box.appendChild(f);
+  });
+})();
+</script>
+<script>
+/* Analytics (GoatCounter, no cookies). Downloads of PDFs and clicks on videos are counted as events.
+   To change the account, edit data-goatcounter below. */
+document.querySelectorAll('a[href$=".pdf"],a[href*="youtu"]').forEach(function(a){
+  var h=a.getAttribute("href");
+  a.setAttribute("data-goatcounter-click",(h.indexOf("youtu")>-1?"video ":"download ")+h);
+  a.setAttribute("data-goatcounter-title",(a.textContent||a.getAttribute("aria-label")||"").trim()||h);
+});
+</script>
+<script data-goatcounter="https://fuy3.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

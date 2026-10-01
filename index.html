@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yiming Fu – Human-Centred Intelligence, Multimodal Learning, Embodied Interaction</title>
+<meta name="description" content="Yiming Fu is an AI researcher and engineer (MSc Artificial Intelligence, The University of Manchester) working on human-centred intelligence, multimodal learning, representation and interpretability, and embodied interaction.">
+<link rel="icon" href="images/favicon.png">
+<link rel="canonical" href="https://fuy3.github.io/">
+<meta name="author" content="Yiming Fu">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Yiming Fu">
+<meta property="og:title" content="Yiming Fu">
+<meta property="og:description" content="Yiming Fu is an AI researcher and engineer (MSc Artificial Intelligence, The University of Manchester) working on human-centred intelligence, multimodal learning, representation and interpretability, and embodied interaction.">
+<meta property="og:url" content="https://fuy3.github.io/">
+<meta property="og:image" content="https://fuy3.github.io/images/profile.jpg">
+<meta property="og:image:alt" content="Portrait of Yiming Fu">
+<meta property="og:locale" content="en_GB">
+<meta property="profile:first_name" content="Yiming">
+<meta property="profile:last_name" content="Fu">
+<meta name="twitter:card" content="summary">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Yiming Fu",
+ "url": "https://fuy3.github.io/",
+ "image": "https://fuy3.github.io/images/profile.jpg",
+ "description": "AI researcher and engineer working on human-centred intelligence, multimodal learning, representation and interpretability, and embodied interaction.",
+ "jobTitle": "VLA R&D Intern",
+ "worksFor": {
+  "@type": "Organization",
+  "name": "Latencore"
+ },
+ "alumniOf": [
+  {
+   "@type": "CollegeOrUniversity",
+   "name": "The University of Manchester"
+  },
+  {
+   "@type": "CollegeOrUniversity",
+   "name": "Dublin City University"
+  }
+ ],
+ "knowsAbout": [
+  "Human-centred intelligence",
+  "Human-computer interaction",
+  "Multimodal learning",
+  "Vision-language models",
+  "Interpretability",
+  "Embodied AI",
+  "Embodied interaction",
+  "Vision-language-action models",
+  "Brain-computer interfaces",
+  "LLM agents"
+ ],
+ "sameAs": [
+  "https://scholar.google.com/citations?user=3mnfW6sAAAAJ",
+  "https://github.com/fuy3",
+  "https://www.linkedin.com/in/yiming-fu93/"
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#1F2328; --muted:#5F6775; --line:#E5E8EE; --soft:#F6F7FA;
+  --accent:#4263EB; --accent-soft:#EEF2FF; --alt-soft:#F4F1FF; --dim:.3;
+  --tl-edu:#868E96; --tl-res:#4263EB; --tl-ind:#7048E8;
+  /* one colour per research topic: an analogous sweep from cyan to grape, equal weight */
+  --t-people:#1098AD; --t-perception:#1C7ED6; --t-multimodal:#1C7ED6; --t-representation:#4263EB; --t-action:#7048E8; --t-embodiment:#7048E8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14161B; --ink:#E7E9EE; --muted:#9AA2B1; --line:#2A2F3A; --soft:#1B1E25;
+    --accent:#748FFC; --accent-soft:#1E2445; --alt-soft:#251F40; --tl-edu:#ADB5BD; --tl-res:#748FFC; --tl-ind:#9775FA;
+    --t-people:#3BC9DB; --t-perception:#4DABF7; --t-multimodal:#4DABF7; --t-representation:#748FFC; --t-action:#9775FA; --t-embodiment:#9775FA;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14161B; --ink:#E7E9EE; --muted:#9AA2B1; --line:#2A2F3A; --soft:#1B1E25;
+  --accent:#748FFC; --accent-soft:#1E2445; --alt-soft:#251F40; --tl-edu:#ADB5BD; --tl-res:#748FFC; --tl-ind:#9775FA;
+  --t-people:#3BC9DB; --t-perception:#4DABF7; --t-multimodal:#4DABF7; --t-representation:#748FFC; --t-action:#9775FA; --t-embodiment:#9775FA;
+}
+[data-topic="people"]{--t:var(--t-people)}
+[data-topic="multimodal"]{--t:var(--t-multimodal)}
+[data-topic="representation"]{--t:var(--t-perception)}
+[data-topic="representation"]{--t:var(--t-representation)}
+[data-topic="embodiment"]{--t:var(--t-action)}
+[data-topic="embodiment"]{--t:var(--t-embodiment)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:16.5px;line-height:1.6}
+h1,h2,h3{font-weight:700;line-height:1.25}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+button{font:inherit;color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--bg)}
+.nav .bar-in{border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:22px;height:52px}
+.nav .home{font-weight:700;color:var(--ink);margin-right:auto;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+body.past-hero .nav .home{opacity:1;visibility:visible}
+.nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{color:var(--muted)}
+.nav ul a:hover{color:var(--ink);text-decoration:none}
+
+/* header */
+.hero{display:grid;grid-template-columns:1fr 190px;gap:48px;align-items:center;padding:48px 0 12px}
+.hero h1{font-size:36px;margin:0 0 2px;letter-spacing:-.01em}
+.hero .tagline{font-size:19.5px;line-height:1.4;color:var(--accent);margin:0 0 16px;text-wrap:balance}
+.hero .aff{color:var(--muted);margin:0 0 14px;font-size:17px}
+.hero p{margin:0 0 12px;max-width:66ch}
+/* what I am looking for: two separate lines, PhD and industry */
+.open{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:620px}
+.open li{display:flex;flex-direction:column;gap:2px;padding:10px 14px;border-radius:10px;background:var(--accent-soft);border-left:3px solid var(--accent);font-size:15px;line-height:1.45}
+.open .k{font-size:13px;font-weight:700;color:var(--accent)}
+.open li.ind{background:var(--alt-soft);border-left-color:var(--t-action)}
+.open li.ind .k{color:var(--t-action)}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:18px;font-size:15px}
+.links .btn{border:1px solid var(--line);border-radius:6px;padding:3px 12px;color:var(--ink)}
+.links .btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.links .btn.pri{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:700}
+.links .btn.pri:hover{color:var(--bg);opacity:.9}
+.links .sep{width:1px;height:18px;background:var(--line);margin:0 4px}
+.photo{position:relative;width:190px;height:190px;border-radius:50%;overflow:hidden;background:var(--accent-soft);display:grid;place-items:center;
+  box-shadow:0 0 0 6px var(--bg),0 0 0 7px var(--line)}
+.photo span{font-size:46px;font-weight:700;color:var(--accent)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+section{padding:36px 0 4px}
+h2{font-size:22px;margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.note{color:var(--muted);font-size:15px;margin:-6px 0 18px}
+
+/* news */
+.news{list-style:none;margin:0;padding:0}
+.news li{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:5px 0}
+.news .d{color:var(--accent);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;padding-top:1px}
+
+/* topic chips (filled by script from data-stages) */
+.topics{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13.5px;color:var(--muted)}
+.topics span{display:inline-flex;align-items:center;gap:6px}
+.topics span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--t)}
+
+/* research topics */
+.arc{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin:6px 0 0}
+.arc::before{content:"";position:absolute;left:12.5%;right:12.5%;top:25px;height:2px;
+  background:var(--line)}
+.stage{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;
+  background:none;border:0;padding:0 6px 6px;cursor:pointer}
+.stage .dot{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--bg);
+  border:2px solid var(--t);font-weight:700;font-size:19px;color:var(--t);transition:background .2s,color .2s,transform .2s}
+.stage .name{font-size:15px;font-weight:700;line-height:1.3;max-width:16ch}
+.stage:hover .dot{transform:scale(1.06)}
+.stage[aria-pressed="true"] .dot{background:var(--t);color:var(--bg)}
+.arc-panel{margin-top:16px;border-left:3px solid var(--t,var(--line));background:var(--soft);border-radius:0 6px 6px 0;padding:12px 18px;min-height:52px}
+.arc-panel p{margin:0 0 6px;max-width:72ch}
+.arc-panel .hint{color:var(--muted);font-size:15px;margin:0}
+.arc-panel .rel{font-size:15px;color:var(--muted);margin:0}
+.arc-panel .clear{background:none;border:0;padding:0;color:var(--accent);cursor:pointer;font-size:15px}
+.dimmable{transition:opacity .25s}
+body.focusing .dimmable:not(.match){opacity:var(--dim)}
+
+/* publications */
+.pubs{list-style:none;padding:0;margin:0}
+.pubs li{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.pubs li:last-child{border-bottom:0}
+.badge{align-self:start;justify-self:start;font-size:13px;font-weight:700;padding:2px 9px;border-radius:5px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.badge.muted{background:var(--soft);color:var(--muted)}
+.pubs .t{font-weight:700;display:block}
+.pubs .a,.pubs .v{display:block;font-size:15.5px}
+.pubs .a{color:var(--muted)}
+.pubs .a b{color:var(--ink)}
+.pubs .v{font-style:italic}
+.pubs .foot{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;margin-top:4px;font-size:15px}
+.pubs .l a{margin-right:10px}
+/* when a research theme is selected: related publications move to the top under a small label,
+   with a thin theme-coloured edge; the rest follow under "Other publications", faded */
+.pubs li.dimmable{position:relative;border-radius:0 6px 6px 0;transition:opacity .25s,background-color .25s,box-shadow .25s,padding .25s}
+body.focusing .pubs li.dimmable.match{background:color-mix(in srgb,var(--t) 6%,transparent);box-shadow:inset 3px 0 0 var(--t);padding-left:14px;padding-right:10px;border-bottom-color:transparent;margin-bottom:6px}
+body.focusing .pubs li.dimmable:not(.match){opacity:.45}
+.pubs li.pub-group{display:block;padding:16px 0 8px;border-bottom:0;font-size:13.5px;color:var(--muted)}
+.pubs li.pub-group:first-child{padding-top:2px}
+.pubs li.pub-group b{color:var(--ink);font-weight:700}
+.pubs li.pub-group i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--t);margin-right:8px;vertical-align:1px}
+.pubs li.pub-group.rest i{background:var(--line)}
+
+/* projects */
+.filters{display:flex;gap:8px;margin:0 0 18px}
+.chip{border:1px solid var(--line);background:var(--bg);padding:4px 14px;border-radius:999px;cursor:pointer;font-size:14.5px;color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:700}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.proj{border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;background:var(--bg)}
+.proj[hidden]{display:none!important}
+.proj.lead{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr}
+.media{position:relative;background:var(--soft);aspect-ratio:16/9;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13.5px;padding:12px;
+  border-bottom:3px solid var(--t,var(--line))}
+.proj.lead .media{aspect-ratio:auto;min-height:250px;border-bottom:0;border-right:3px solid var(--t,var(--line))}
+.media video,.media img,.media iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border:0}
+.proj .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.proj h3{margin:0;font-size:17px}
+.proj .where{font-size:14.5px;color:var(--muted)}
+.proj p{margin:0;font-size:15.5px}
+.proj .num{color:var(--muted)}
+.proj .num b{color:var(--ink)}
+.proj .plinks{font-size:15px}
+.proj .plinks a{margin-right:14px}
+.proj .foot{margin-top:auto;padding-top:8px;display:flex;flex-direction:column;gap:6px}
+.kind{font-size:14px;color:var(--muted)}
+.sub{font-size:17px;margin:34px 0 14px;color:var(--muted)}
+.mini-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+.proj.sm .body{padding:12px 14px 14px;gap:4px}
+.proj.sm h3{font-size:16px}
+.proj.sm p{font-size:14.5px}
+.proj.sm .where,.proj.sm .kind{font-size:13.5px}
+.media.yt{display:block;padding:0}
+.media.fit img{object-fit:contain;background:#fff;padding:6px}
+.media.yt .play{position:absolute;left:50%;top:50%;width:52px;height:36px;margin:-18px 0 0 -26px;border-radius:9px;background:rgba(20,22,27,.78)}
+.media.yt .play::after{content:"";position:absolute;left:21px;top:10px;border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff}
+.media.yt:hover .play{background:var(--accent)}
+.status{display:inline-block;font-size:12.5px;font-weight:700;border-radius:4px;padding:0 7px;margin-left:8px;vertical-align:2px;background:var(--alt-soft);color:var(--t-action)}
+.award:hover{text-decoration:none;filter:brightness(.96)}
+.award{display:inline-block;font-size:13px;font-weight:700;border-radius:4px;padding:1px 8px;background:var(--alt-soft);color:var(--t-action)}
+.mini{border-collapse:collapse;font-size:14.5px;margin:2px 0}
+.mini td{padding:2px 14px 2px 0;border-bottom:1px solid var(--line)}
+.mini td.n{font-variant-numeric:tabular-nums;text-align:right}
+
+/* timeline: soft translucent bars (grey, blue, violet); the institution is centred in its bar when it fits,
+   and a small caption centred under the bar gives the lab or programme. Scrolls sideways, opening on the recent end. */
+.tl-scroll{position:relative;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding-bottom:6px}
+.tl-grid{position:relative;display:grid;grid-template-columns:100px 1fr}
+.tl-corner,.tl-lane-label{position:sticky;left:0;z-index:3;background:var(--bg)}
+.tl-scroll.scrolled .tl-corner,.tl-scroll.scrolled .tl-lane-label{box-shadow:8px 0 10px -8px rgba(15,20,40,.18)}
+.tl-axis{position:relative;height:30px}
+.tl-axis .yr{position:absolute;top:0;transform:translateX(-50%);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl-axis .base{position:absolute;top:23px;height:0;border-top:1px solid var(--line)}
+.tl-axis .base.early{border-top:1.5px dotted var(--muted);opacity:.5}
+.tl-axis .tick{position:absolute;top:19px;width:1px;height:5px;background:var(--muted);opacity:.45}
+.tl-lane-label,.tl-lane{border-top:1px solid var(--line)}
+.tl-lane-label{font-size:13.5px;color:var(--muted);padding-top:14px}
+.tl-lane{position:relative}
+.tl-guides{position:absolute;pointer-events:none;z-index:0}
+.tl-guides i{position:absolute;top:0;bottom:0;width:0;border-left:1px solid var(--line);opacity:.8}
+.tl-now{position:absolute;top:-10px;bottom:0;width:0;border-left:1.5px dashed var(--accent);opacity:.55}
+.tl-item{position:absolute;z-index:1;height:46px;padding:0;margin:0;border:0;background:none;cursor:pointer;color:var(--ink);font:inherit;text-align:left;transition:opacity .25s}
+.tl-item .bar{position:absolute;top:0;height:28px;border-radius:6px;
+  background:color-mix(in srgb,var(--lc) 12%,transparent);border:1px solid color-mix(in srgb,var(--lc) 28%,transparent);
+  transition:background .15s,box-shadow .15s}
+.tl-item .nm{position:absolute;top:0;height:28px;line-height:28px;font-size:13px;font-weight:700;text-align:center;white-space:nowrap;color:var(--ink)}
+.tl-item .cap{position:absolute;top:30px;line-height:16px;font-size:12px;white-space:nowrap;color:var(--muted)}
+.tl-item[data-lane="education"]{--lc:var(--tl-edu)}
+.tl-item[data-lane="research"]{--lc:var(--tl-res)}
+.tl-item[data-lane="industry"]{--lc:var(--tl-ind)}
+.tl-item.ongoing .bar{border-right:0;border-top-right-radius:0;border-bottom-right-radius:0;
+  -webkit-mask-image:linear-gradient(90deg,#000 45%,transparent);mask-image:linear-gradient(90deg,#000 45%,transparent)}
+.tl-item:hover .bar{background:color-mix(in srgb,var(--lc) 18%,transparent);border-color:color-mix(in srgb,var(--lc) 45%,transparent)}
+.tl-item[aria-selected="true"] .bar{background:color-mix(in srgb,var(--lc) 20%,transparent);border-color:color-mix(in srgb,var(--lc) 60%,transparent);
+  box-shadow:0 0 0 2px var(--bg),0 0 0 3.5px color-mix(in srgb,var(--lc) 75%,transparent)}
+.tl-item:focus-visible{outline:none}
+.tl-item:focus-visible .bar{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--accent)}
+.tl-lane-label::before{content:"";display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:7px;vertical-align:1px;
+  background:color-mix(in srgb,var(--lc) 35%,transparent);border:1px solid color-mix(in srgb,var(--lc) 60%,transparent)}
+.tl-lane-label[data-lane="education"]{--lc:var(--tl-edu)}
+.tl-lane-label[data-lane="research"]{--lc:var(--tl-res)}
+.tl-lane-label[data-lane="industry"]{--lc:var(--tl-ind)}
+.tl-detail{margin-top:20px;border-left:3px solid var(--lane,var(--line));padding:2px 0 2px 18px;display:grid;grid-template-columns:1fr auto;gap:2px 20px}
+.tl-detail[data-lane="research"]{--lane:var(--tl-res)}
+.tl-detail[data-lane="industry"]{--lane:var(--tl-ind)}
+.tl-detail[data-lane="education"]{--lane:var(--tl-edu)}
+.tl-detail h3{margin:0;font-size:18px}
+.tl-detail .org{color:var(--muted);font-size:15.5px}
+.tl-detail .ctx{font-size:15px;color:var(--muted);font-style:italic}
+.tl-detail .sup{font-size:15px;color:var(--muted)}
+.tl-detail .when{font-size:15px;color:var(--muted);text-align:right}
+.tl-detail ul{grid-column:1/-1;margin:8px 0 0;padding-left:20px}
+.tl-detail li{margin:3px 0}
+.tl-detail .live,.tl-list .live{grid-column:1/-1;font-size:15px;margin-top:6px}
+.tl-nav{grid-column:1/-1;display:flex;gap:8px;margin-top:10px}
+.tl-nav button{border:1px solid var(--line);background:var(--bg);border-radius:5px;padding:3px 12px;cursor:pointer;font-size:14px;color:var(--muted)}
+.tl-list{display:none;list-style:none;margin:0;padding:0}
+
+/* other */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.svc{list-style:none;padding:0;margin:0}
+.svc li{display:flex;justify-content:space-between;gap:16px;padding:3px 0}
+.svc .d{color:var(--muted);white-space:nowrap}
+.more-link{font-size:15px;margin-top:10px;display:inline-block}
+.skills{margin:0}
+.skills dt{font-weight:700;margin-top:8px}
+.skills dd{margin:0;color:var(--muted)}
+footer{margin-top:56px;border-top:1px solid var(--line)}
+footer .wrap{padding-top:20px;padding-bottom:40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;gap:20px;padding-top:32px}
+  .hero figure{order:-1}
+  .photo{width:120px;height:120px}
+  .photo span{font-size:32px}
+  .projects,.mini-grid{grid-template-columns:1fr}
+  .proj.lead{grid-template-columns:1fr}
+  .proj.lead .media{min-height:0;aspect-ratio:16/9;border-right:0;border-bottom:3px solid var(--t,var(--line))}
+  .two{grid-template-columns:1fr;gap:4px}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .open{grid-template-columns:1fr}
+  .links .sep{flex-basis:100%;height:0;width:0;margin:0;background:none}
+  .wrap{padding:0 16px}
+  .nav ul{display:none}
+  .nav{position:fixed;left:0;right:0;transform:translateY(-100%);transition:transform .2s}
+  body.past-hero .nav{transform:none}
+  .news li{grid-template-columns:1fr;gap:0}
+  .arc{grid-template-columns:1fr;gap:4px}
+  .arc::before{left:24px;right:auto;top:25px;bottom:25px;width:2px;height:auto}
+  .stage{flex-direction:row;text-align:left;gap:14px;padding:3px 0}
+  .stage .dot{flex-shrink:0}
+  .stage .name{max-width:none}
+  .pubs li{grid-template-columns:1fr;gap:4px}
+  .tl-scroll,.tl-detail,#experience .note{display:none}
+  .tl-list{display:block}
+  .tl-list>li{border-bottom:1px solid var(--line)}
+  .tl-list>li:last-child{border-bottom:0}
+  .tl-list button{width:100%;display:grid;grid-template-columns:auto 1fr;gap:0 10px;text-align:left;background:none;border:0;padding:10px 0;cursor:pointer}
+  .tl-list .sw{width:10px;height:10px;border-radius:3px;margin-top:8px;background:color-mix(in srgb,var(--tl-res) 35%,transparent);border:1px solid var(--tl-res)}
+  .tl-list [data-lane="industry"] .sw{background:color-mix(in srgb,var(--tl-ind) 35%,transparent);border-color:var(--tl-ind)}
+  .tl-list [data-lane="education"] .sw{background:color-mix(in srgb,var(--tl-edu) 35%,transparent);border-color:var(--tl-edu)}
+  .tl-list .ti{font-weight:700}
+  .tl-list .su{grid-column:2;font-size:14.5px;color:var(--muted)}
+  .tl-list .more{padding:0 0 12px 20px;font-size:15px}
+  .tl-list .more ul{margin:0;padding-left:18px}
+  .tl-list .ctx,.tl-list .sup{margin:0 0 4px;color:var(--muted)}
+  .tl-list .ctx{font-style:italic}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="bar-in">
+    <div class="wrap">
+      <a class="home" href="#top">Yiming Fu</a>
+      <ul>
+        <li><a href="#news">News</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="activities.html">Outreach</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <h1>Yiming Fu</h1>
+        <p class="aff">MSc Artificial Intelligence, The University of Manchester</p>
+        <p class="tagline">Understanding how intelligent systems perceive, represent, and interact with the world.</p>
+        <p>My research explores human-centred intelligence, multimodal learning, representation & interpretability, and embodied interaction. I am interested in how multimodal representations align with human perception and cognition, how they can be understood through model behaviour, and how they support interaction and action.</p>
+        <p>Most recently, I worked with the Cognitive Robotics Laboratory in Manchester on numerosity representations in vision–language models. At Latencore, I build multimodal data pipelines and UMI hardware for robot learning, exploring how additional modalities such as audio can support vision–language–action models. With two years of software engineering experience, I enjoy bringing research questions from analysis into working models and systems.</p>
+        <ul class="open" aria-label="Currently looking for">
+          <li><span class="k">PhD</span><span>Seeking positions starting in 2027</span></li>
+          <li class="ind"><span class="k">Industry</span><span>Open to research and engineering roles </span></li>
+        </ul>
+        <div class="links">
+          <a class="btn pri" href="#" id="email">Email</a>
+          <a class="btn" href="data/Yiming_Fu_CV_Research.pdf">CV (research)</a>
+          <a class="btn" href="data/Yiming_Fu_CV_Engineering.pdf">CV (engineering)</a>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="https://scholar.google.com/citations?user=3mnfW6sAAAAJ&amp;hl=en">Google Scholar</a>
+          <a href="https://github.com/fuy3">GitHub</a>
+          <a href="https://www.linkedin.com/in/yiming-fu93/">LinkedIn</a>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <div class="photo"><span aria-hidden="true">YF</span><img src="images/profile.jpg" alt="Yiming Fu" onerror="this.remove()"></div>
+      </figure>
+    </header>
+  </div>
+
+  <!-- ============ NEWS ============ -->
+  <section id="news">
+    <div class="wrap">
+      <h2>News</h2>
+      <ul class="news">
+        <li><span class="d">2026.09</span><span>Joined Latencore in Cambridge as a VLA R&amp;D Intern.</span></li>
+        <li><span class="d">2026.09</span><span> Our <a href="#proj-numerosity">NumerosityVLM</a> was presented at the Human-inspired Computer Vision Workshop, ECCV 2026, Malmö.</span></li>
+        <li><span class="d">2026.09</span><span>Our object-goal navigation paper won the <b>Unitree Robotics Best Paper Award</b> at TAROS 2026.</span></li>
+        <li><span class="d">2026.08</span><span>Submitted my MSc dissertation. The <a href="#proj-perceptEEG">PerceptEEG</a> draft is online.</span></li>
+        <li><span class="d">2026.06</span><span><a href="https://arxiv.org/abs/2511.14414">PACEE</a> accepted to UIST 2026.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="note">Select an entry for details; scroll sideways for earlier years. The dashed line marks today.</p>
+      <div class="tl-scroll" id="tl-scroll"><div class="tl-grid" id="tl-grid"></div></div>
+      <div class="tl-detail" id="tl-detail" aria-live="polite"></div>
+      <ul class="tl-list" id="tl-list"></ul>
+      <noscript><p>See my CV for full experience.</p></noscript>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section id="research">
+    <div class="wrap">
+      <h2>Research</h2>
+      <p class="note">Four connected themes. Select one to highlight related research experience and publications.</p>
+      <div class="arc" role="group" aria-label="Research themes">
+        <button class="stage" data-stage="people" data-topic="people" aria-pressed="false"><span class="dot">1</span><span class="name">Human-Centred Intelligence</span></button>
+        <button class="stage" data-stage="multimodal" data-topic="multimodal" aria-pressed="false"><span class="dot">2</span><span class="name">Multimodal Learning</span></button>
+        <button class="stage" data-stage="representation" data-topic="representation" aria-pressed="false"><span class="dot">3</span><span class="name">Representation &amp; Interpretability</span></button>
+        <button class="stage" data-stage="embodiment" data-topic="embodiment" aria-pressed="false"><span class="dot">4</span><span class="name">Embodied Interaction</span></button>
+      </div>
+      <div class="arc-panel" id="arc-panel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section id="publications">
+    <div class="wrap">
+      <h2>Publications</h2>
+      <ul class="pubs">
+        <li class="dimmable" data-stages="multimodal representation">
+          <span class="badge">ECCV-W 2026</span>
+          <div>
+            <span class="t">NumerosityVLM: A Cognitively Inspired Benchmark for Interpreting Numerosity Representations in Vision–Language Models</span>
+            <span class="a"><b>Y. Fu</b>, F. Li, X. Liu, R. Ma, H. Yu, Z. Lu, K. He, A. Di Nuovo, A. Cangelosi, Z. Shangguan</span>
+            <span class="v">3rd Human-inspired Computer Vision Workshop, ECCV 2026</span>
+            <div class="foot"><span class="l"><a href="https://arxiv.org/abs/2608.15425">arXiv</a><a href="https://github.com/fuy3/NumerosityVLM-Benchmark">code</a><a href="https://huggingface.co/datasets/fuy3/NumerosityVLM">data</a><a href="#proj-numerosity">project</a></span><span class="topics"></span></div>
+          </div>
+        </li>
+        <li class="dimmable" data-stages="embodiment">
+          <span class="badge">TAROS 2026</span>
+          <div>
+            <span class="t">Depth-Aware Gating for Improved Termination Control in Object-Goal Navigation via Reinforcement Learning</span>
+            <span class="a">K. He, Z. Shangguan, <b>Y. Fu</b>, Z. Ma, R. Ma, A. Di Nuovo, A. Cangelosi, F. Li</span>
+            <span class="v">Towards Autonomous Robotic Systems (TAROS), 2026</span>
+            <div class="foot"><span class="l"><a href="https://research.manchester.ac.uk/en/publications/depth-aware-gating-for-improved-termination-control-in-object-goa/">paper</a><a href="https://github.com/Mikasa011110/Depth-Gate-Navigation">code</a><a href="#proj-objectnav">project</a></span><a class="award" href="images/activities/taros2026-best-paper-certificate.jpg">Unitree Robotics Best Paper Award</a><span class="topics"></span></div>
+          </div>
+        </li>
+        <li class="dimmable" data-stages="people">
+          <span class="badge">UIST 2026</span>
+          <div>
+            <span class="t">PACEE: Supporting Children's Personal Emotion Education through Parent–AI Collaboration</span>
+            <span class="a">Y. Mei, X. Wang, Z. Zhang, <b>Y. Fu</b>, S. Wang, Q. Wan, Q. Lan, C. Liu, J. Cai, C. Yu, et al.</span>
+            <span class="v">ACM Symposium on User Interface Software and Technology (UIST), 2026</span>
+            <div class="foot"><span class="l"><a href="https://arxiv.org/abs/2511.14414">arXiv</a><a href="https://youtu.be/hpn_4eOX2qo">video</a><a href="#proj-pacee">project</a></span><span class="topics"></span></div>
+          </div>
+        </li>
+        <li class="dimmable" data-stages="people">
+          <span class="badge">ICHEC 2025</span>
+          <div>
+            <span class="t">Exploring Engagement, Interaction, and Community-Building Among Content Creators and Viewers in RedNote's Autism-Related Content</span>
+            <span class="a"><b>Y. Fu</b>, S. Su, J. Li, S. Yang, Z. Lu, X. Tong</span>
+            <span class="v">International Conference on Human-Engaged Computing (ICHEC), 2025</span>
+            <div class="foot"><span class="l"><a href="https://doi.org/10.1145/3786995.3787013">paper</a></span><span class="topics"></span></div>
+          </div>
+        </li>
+        <li class="dimmable" data-stages="people">
+          <span class="badge">DH 2025</span>
+          <div>
+            <span class="t">A Deep-Learning Model for Edition Identification of Premodern Chinese Rare Books</span>
+            <span class="a">Y. Wei, <b>Y. Fu</b>, S. Wang, S. Gao, T. Liu, Z. Wang, X. Tong</span>
+            <span class="v">Digital Humanities, 2025</span>
+            <div class="foot"><span class="l"><a href="https://cislab.hkust-gz.edu.cn/publications/a-deep-learning-model-for-edition-identification-of-premodern-chinese-rare-books/">paper</a><a href="https://cislab.hkust-gz.edu.cn/media/documents/A_Deep-Learning_Model_for_Edition_Identification_of_Premodern_Chinese_Rare_Books.pdf">PDF</a><a href="#proj-rarebooks">project</a></span><span class="topics"></span></div>
+          </div>
+        </li>
+        <li class="dimmable" data-stages="multimodal">
+          <span class="badge muted">Under review</span>
+          <div>
+            <span class="t">PGT-Net: Prior Guided Transformer for Hyperspectral Image Denoising</span>
+            <span class="a">S. Wang, <b>Y. Fu</b>, L. Li, X. Li, X. Su, F. Chen</span>
+            <span class="v">IEEE Transactions on Multimedia, under review</span>
+            <div class="foot"><span class="l"><a href="papers/PGTNet_preprint.pdf">PDF</a><a href="#proj-pgtnet">project</a></span><span class="topics"></span></div>
+          </div>
+        </li>
+        <li class="dimmable" data-stages="multimodal representation">
+          <span class="badge muted">Draft</span>
+          <div>
+            <span class="t">PerceptEEG: Diagnosing and Bridging the EEG–Visual Representation Gap for Zero-Shot EEG-to-Image Retrieval</span>
+            <span class="a"><b>Y. Fu</b></span>
+            <span class="v">Manuscript in preparation</span>
+            <div class="foot"><span class="l"><a href="papers/PerceptEEG_draft.pdf">PDF</a><a href="https://youtu.be/3hbdzn6Ga-w">video</a><a href="perceptEEG.html">project page</a></span><span class="topics"></span></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip" data-kind="all" aria-pressed="true">All</button>
+        <button class="chip" data-kind="aca" aria-pressed="false">Academic</button>
+        <button class="chip" data-kind="ind" aria-pressed="false">Industry</button>
+      </div>
+      <div class="projects">
+        <article class="proj lead" id="proj-umi" data-kind="ind" data-stages="" data-topic="">
+          <div class="media"><img src="images/umi-rig.jpg" alt="Hand-held UMI gripper with a wrist camera and magnetic encoder, in front of the live data-collection dashboard showing the camera stream and gripper angle" loading="lazy" style="object-position:50% 60%"></div>
+          <div class="body">
+            <h3>UMI hardware and audio-augmented VLA</h3>
+            <div class="where">Latencore, Cambridge, 2026</div>
+            <p>Built a Universal Manipulation Interface (UMI) rig end to end, from soldering and 3D printing to assembly and debugging, with magnetic encoders, industrial cameras and VR tracking, and used it to collect demonstrations. Introduced an audio modality, checking its validity and interpretability, then built the multimodal fusion framework and trained the models, evaluated on a real robot.</p>
+            <div class="foot"><div class="kind">Hardware build, data collection, multimodal fusion, VLA training</div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj" id="proj-numerosity" data-kind="aca" data-stages="multimodal representation" data-topic="representation">
+          <div class="media"><img src="images/HCV-poster.png" alt="NumerosityVLM poster at the Human-inspired Computer Vision Workshop, ECCV 2026" loading="lazy" style="object-position:50% 45%"></div>
+          <div class="body">
+            <h3>NumerosityVLM</h3>
+            <div class="where">Cognitive Robotics Laboratory, The University of Manchester</div>
+            <p>A diagnostic benchmark built with orthogonal design and controlled visual cues, plus layer-wise analysis of what models encode about quantity versus what they output.</p>
+            <p class="num"><b>10,800</b> images, <b>6</b> conditions, <b>7</b> open models</p>
+            <div class="foot"><div class="plinks"><a href="https://arxiv.org/abs/2608.15425">arXiv</a><a href="https://github.com/fuy3/NumerosityVLM-Benchmark">Code</a><a href="https://huggingface.co/datasets/fuy3/NumerosityVLM">Dataset</a></div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj" id="proj-perceptEEG" data-kind="aca" data-stages="multimodal representation" data-topic="multimodal">
+          <a class="media yt" href="https://youtu.be/3hbdzn6Ga-w" aria-label="Watch the PerceptEEG project video on YouTube">
+            <img src="images/perceptEEG-overview.png" alt="" loading="lazy" style="object-position:50% 45%"><span class="play" aria-hidden="true"></span>
+          </a>
+          <div class="body">
+            <h3>PerceptEEG<span class="status">Draft</span></h3>
+            <div class="where">MSc dissertation, The University of Manchester</div>
+            <p>Diagnoses where EEG responses and pretrained visual features disagree, then aligns them using frozen OpenCLIP ViT-H/14 targets and a spatiotemporal residual adapter.</p>
+            <table class="mini" aria-label="THINGS-EEG2 200-way retrieval">
+              <tr><td>Within subject, R@1</td><td class="n">30.10% → <b>65.85%</b></td></tr>
+              <tr><td>Within subject, R@5</td><td class="n"><b>91.40%</b></td></tr>
+              <tr><td>Cross subject, R@1</td><td class="n"><b>12.85%</b></td></tr>
+            </table>
+            <div class="foot"><div class="plinks"><a href="papers/PerceptEEG_draft.pdf">PDF (draft)</a><a href="https://youtu.be/3hbdzn6Ga-w">Video</a><a href="perceptEEG.html">Project page</a></div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj" id="proj-objectnav" data-kind="aca" data-stages="embodiment" data-topic="embodiment">
+          <div class="media fit"><img src="images/objectnav-depth-gate-overview.jpg" alt="Depth-gated object-goal navigation: RGB and depth inputs, memory transformer, depth gate modulating the stop action" loading="lazy"></div>
+          <div class="body">
+            <h3>Knowing when to stop in object-goal navigation</h3>
+            <div class="where">Cognitive Robotics Laboratory, The University of Manchester; co-author</div>
+            <p>Agents that search for an object often fail at the last step, deciding when they are close enough to stop. A learnable depth-aware gate on an Object Memory Transformer adjusts only the stop decision, using explicit depth cues; trained with PPO in AI2-THOR.</p>
+            <p class="num">Success rate <b>70.1% → 80.5%</b>, wrong-stop rate <b>25.2% → 14.1%</b></p>
+            <div class="foot"><a class="award" href="images/activities/taros2026-best-paper-certificate.jpg">TAROS 2026 Best Paper Award</a><div class="plinks"><a href="https://research.manchester.ac.uk/en/publications/depth-aware-gating-for-improved-termination-control-in-object-goa/">Paper</a><a href="https://github.com/Mikasa011110/Depth-Gate-Navigation">Code and video</a></div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj" id="proj-pgtnet" data-kind="aca" data-stages="multimodal" data-topic="multimodal">
+          <div class="media fit"><img src="images/pgtnet-overview.jpg" alt="PGT-Net architecture: unrolled iterative learning with physical-prior and implicit-prior sub-networks" loading="lazy"></div>
+          <div class="body">
+            <h3>PGT-Net<span class="status">Under review</span></h3>
+            <div class="where">With the Shanghai Institute of Technical Physics, CAS; second author</div>
+            <p>A prior-guided Transformer for hyperspectral image denoising that unrolls an iterative optimisation into a physical-prior network, which filters noise in the frequency domain, and an implicit-prior network with scaling attention and multi-modal feature fusion.</p>
+            <div class="foot"><div class="plinks"><a href="papers/PGTNet_preprint.pdf">PDF (preprint)</a></div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj" id="proj-pacee" data-kind="aca" data-stages="people" data-topic="people">
+          <a class="media yt fit" href="https://youtu.be/hpn_4eOX2qo" aria-label="Watch the PACEE video on YouTube">
+            <img src="images/pacee-study-overview.jpg" alt="PACEE study design: formative interviews, iterative system design and an evaluation with 16 parent–child pairs" loading="lazy"><span class="play" aria-hidden="true"></span>
+          </a>
+          <div class="body">
+            <h3>PACEE voice interviewer</h3>
+            <div class="where">Pervasive HCI Laboratory, Tsinghua University</div>
+            <p>AI interview workflow for a parent–AI collaborative system, with streaming speech recognition and synthesis for real-time conversation.</p>
+            <div class="foot"><div class="plinks"><a href="https://arxiv.org/abs/2511.14414">arXiv</a><a href="https://youtu.be/hpn_4eOX2qo">Video</a></div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj" id="proj-rarebooks" data-kind="aca" data-stages="people" data-topic="people">
+          <a class="media fit" href="https://cislab.hkust-gz.edu.cn/publications/a-deep-learning-model-for-edition-identification-of-premodern-chinese-rare-books/" aria-label="Rare-book edition identification paper"><img src="images/rare-book-card.jpg" alt="Above: pages of a scanned rare book; below: the binarised text patches cut from them for training" loading="lazy"></a>
+          <div class="body">
+            <h3>Edition identification of rare books</h3>
+            <div class="where">HCIX Project, HKUST (Guangzhou), 2023–2025</div>
+            <p>Computer vision for premodern Chinese rare books: page binarisation, frame detection and patching of scanned pages, then classifiers that learn regional printing styles.</p>
+            <p class="num"><b>91.3%</b> accuracy across 11 period and region classes</p>
+            <div class="foot"><div class="plinks"><a href="https://cislab.hkust-gz.edu.cn/publications/a-deep-learning-model-for-edition-identification-of-premodern-chinese-rare-books/">Paper</a><a href="https://cislab.hkust-gz.edu.cn/media/documents/A_Deep-Learning_Model_for_Edition_Identification_of_Premodern_Chinese_Rare_Books.pdf">PDF</a></div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj" id="proj-agent" data-kind="ind" data-stages="" data-topic="">
+          <div class="media"><img src="images/histella.png" alt="Histella, the product the services were built for" loading="lazy" style="object-position:50% 45%"></div>
+          
+          <div class="body">
+            <h3>Knowledge assistant: agents and retrieval</h3>
+            <div class="where">MahaNova, 2024–2025</div>
+            <p>Components for an LLM knowledge assistant: MCP client–server prototypes for enterprise retrieval, intent recognition, query rewriting and web retrieval with source attribution, document parsing for knowledge-base ingestion, and one interface over six LLMs. Shipped in Histella.</p>
+            <div class="foot"><div class="plinks"><a href="https://histella.cn">histella.cn</a></div><div class="kind">MCP, RAG, reranking, FastAPI, LLM integration</div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj" id="proj-poem" data-kind="ind" data-stages="" data-topic="">
+          <a class="media" href="https://poem.pkudh.org" aria-label="Open the poetry platform"><img src="images/pku-poetry-platform.jpg" alt="Home page of the Shi Qian Jia poetry platform: AI writing tools in the sidebar, a generated poem, and the prompt box for creating a new poem" loading="lazy" style="object-position:0 0"></a>
+          <div class="body">
+            <h3>Institute for Artificial Intelligence, Poetry generation platform backend</h3>
+            <div class="where">Peking University, 2024</div>
+            <p>Python (FastAPI) endpoints for poem generation, rewriting and community sharing, integrating local LLM inference with MongoDB storage; request validation and API rate limiting on the backend services.</p>
+            <div class="foot"><div class="plinks"><a href="https://poem.pkudh.org">poem.pkudh.org</a></div><div class="kind">Python, FastAPI, MongoDB, local LLMs</div><div class="topics"></div></div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="sub">Early projects</h3>
+      <div class="projects mini-grid">
+        <article class="proj sm" id="proj-embroidery" data-kind="aca" data-stages="people" data-topic="people">
+          <a class="media fit" href="embroidery.html" aria-label="Embroidery project page"><img src="images/embroidery/embroidery-card.jpg" alt="An embroidery line drawing, a pattern generated from it in a stitch style, and a locally recoloured version" loading="lazy"></a>
+          <div class="body">
+            <h3>Embroidery pattern generation</h3>
+            <div class="where">Diffusion models for Miao and Qiang embroidery, 2025</div>
+            <p>Clean line drawings extracted from embroidery photos through colour-gradient edges and filtering of unclosed pixels; new patterns generated in a stitch style with a LoRA trained on 21 images and model merging; selected regions recoloured from colour strokes or text.</p>
+            <div class="foot"><div class="plinks"><a href="embroidery.html">Project page</a></div><div class="kind">Diffusion models, LoRA, model fusion, image processing</div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj sm" id="proj-icub" data-kind="aca" data-stages="embodiment" data-topic="embodiment">
+          <a class="media fit" href="papers/iCub-object-recognition-report.pdf" aria-label="Open the iCub object recognition report (PDF)"><img src="images/icub-robot-vision-features.jpg" alt="An STL-10 image with its HOG descriptor and feature maps from a small CNN, ResNet-18 from scratch and pretrained ResNet-18, plus the pretrained model's confusion matrix" loading="lazy"></a>
+          <div class="body">
+            <h3>iCub object recognition</h3>
+            <div class="where">Cognitive Robotics and Computer Vision coursework (78). The University of Manchester, 2025</div>
+            <p>Handcrafted pipelines (SIFT, ORB and HOG with bag of words), a small CNN and ResNet-18, trained from scratch or pretrained, compared on iCubWorld 1.0 and STL-10 with 40 training images per class. A robot-view test set changes viewpoint and background to expose reliance on background cues.</p>
+            <p class="num">Robot view: <b>50.1%</b> with pretraining vs <b>18.8%</b> for the small CNN</p>
+            <div class="foot"><div class="plinks"><a href="papers/iCub-object-recognition-report.pdf">PDF</a></div><div class="kind">OpenCV, PyTorch, transfer learning</div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj sm" id="proj-cnn" data-kind="aca" data-stages="multimodal" data-topic="multimodal">
+          <a class="media fit" href="papers/compact-residual-CNN-report.pdf" aria-label="Open the compact residual CNN report (PDF)"><img src="images/cnn-fashion-mnist-overview.jpg" alt="Fashion-MNIST samples, the residual network architecture (stem, two residual blocks, transitions, global average pooling) and the test-set confusion matrix" loading="lazy"></a>
+          <div class="body">
+            <h3>Compact residual CNN</h3>
+            <div class="where">Topics in Machine Learning coursework (full marks). The University of Manchester, 2025</div>
+            <p>A compact residual network for 28&times;28 images: a stem convolution, two residual blocks with strided transitions and a global-average-pooling head. Tuned with Bayesian optimisation under 5-fold cross-validation, with ablations on augmentation, channel width and pooling.</p>
+            <p class="num"><b>93.1%</b> on Fashion-MNIST with <b>67k</b> parameters; <b>98%</b> on MNIST</p>
+            <div class="foot"><div class="plinks"><a href="papers/compact-residual-CNN-report.pdf">PDF</a></div><div class="kind">PyTorch, Bayesian optimisation, ablation studies</div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj sm" id="proj-lecture" data-kind="aca" data-stages="people" data-topic="people">
+          <div class="media"><img src="images/lecture-plus-vr-classroom.jpg" alt="Lecture+ VR lecture hall with the sign-in panel showing a class code" loading="lazy"></div>
+          <div class="body">
+            <h3>Lecture+</h3>
+            <div class="where">VR classroom with an LLM teaching assistant. Final-year project, DCU, 2023–2024</div>
+            <p>A Unity (C#) VR lecture hall where lecturers share videos by class code through a Firebase backend, with an assistant built on LLaMA 2 (7B, chat) instruction-tuned on 70 university FAQs as a pilot domain to curb hallucination. The model runs on Hugging Face Inference Endpoints on AWS, with 2.1 s mean and 4.75 s P95 latency under load testing.</p>
+            <div class="foot"><div class="kind">Unity, C#, Firebase, LLaMA 2, AWS</div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj sm" id="proj-scavenger" data-kind="aca" data-stages="people" data-topic="people">
+          <a class="media yt fit" href="https://youtube.com/shorts/7iELLPRZlfM" aria-label="Watch the ScavengerAR demo on YouTube">
+            <img src="images/scavengerar-screens.jpg" alt="ScavengerAR app screens: artwork search, painting details, quiz and reward" loading="lazy"><span class="play" aria-hidden="true"></span>
+          </a>
+          <div class="body">
+            <h3>ScavengerAR</h3>
+            <div class="where">Gamified museum-guide web app. Team project, DCU, 2022–2023</div>
+            <p>A scavenger hunt through a gallery: visitors photograph artworks, image recognition checks each find, and hints, points and a collection board carry the tour, with no account needed. Audience research shaped three paths: a game layer for younger visitors, a simpler interface for older visitors and graded art content for professionals. Tested with 13 recruited users, 93% positive feedback.</p>
+            <div class="foot"><div class="plinks"><a href="https://youtube.com/shorts/7iELLPRZlfM">Demo video</a></div><div class="kind">User research, Figma, image recognition, AR</div><div class="topics"></div></div>
+          </div>
+        </article>
+
+        <article class="proj sm" id="proj-soul" data-kind="aca" data-stages="people" data-topic="people">
+          <a class="media yt" href="https://youtu.be/q0aZpl9mpqY" aria-label="Watch the SOUL video on YouTube">
+            <img src="https://i.ytimg.com/vi/q0aZpl9mpqY/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span>
+          </a>
+          <div class="body">
+            <h3>SOUL</h3>
+            <div class="where">Psychology game on Roblox. Programming lead, PKU summer school, 2022</div>
+            <p>Led a team of four to build 10 props and 7 systems in 16 days; wrote the dialogue and sanity systems in Lua, planned interactions and made the trailer.</p>
+            <div class="foot"><div class="plinks"><a href="https://youtu.be/q0aZpl9mpqY">Video</a></div><div class="kind">Lua, Roblox, team lead</div><div class="topics"></div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OTHER ============ -->
+  <section id="other">
+    <div class="wrap two">
+      <div>
+        <h2>Service and outreach</h2>
+        <ul class="svc">
+          <li><span>Academic Department Member, CSSA Manchester</span><span class="d">2025–2026</span></li>
+          <li><span>Events Lead, External Relations Department, CSSA Ireland</span><span class="d">2022–2024</span></li>
+          <li><span>Cultural Ambassador, Education in Ireland</span><span class="d">2022</span></li>
+          <li><span>International Student Ambassador, DCU</span><span class="d">2021–2022</span></li>
+          <li><span>Volunteer Teacher, PEER</span><span class="d">2021</span></li>
+        </ul>
+        <a class="more-link" href="activities.html">Details and photos</a>
+      </div>
+      <div>
+        <h2>Skills</h2>
+        <dl class="skills">
+          <dt>Multimodal models</dt><dd>Training (SFT, LoRA), evaluation, representation and mechanism analysis</dd>
+          <dt>HCI and agents</dt><dd>User studies, mixed methods, RAG, MCP, LangChain, ASR/TTS</dd>
+          <dt>Software</dt><dd>Python, Java, SQL; FastAPI, Flask, Spring Boot, Vue; Docker, Jenkins, Linux, AWS, Azure</dd>
+          <dt>Robotics and XR</dt><dd>UMI hardware (soldering, 3D printing, assembly), camera and VR tracking, VLA training, Unity</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Yiming Fu. </span></div>
+</footer>
+
+<script>
+/* show the name in the nav only once the page heading has scrolled away */
+(function(){
+  var h=document.querySelector(".hero h1");
+  if(!h||!("IntersectionObserver" in window)){document.body.classList.add("past-hero");return;}
+  new IntersectionObserver(function(e){document.body.classList.toggle("past-hero",!e[0].isIntersecting);},{rootMargin:"-60px 0px 0px 0px"}).observe(h);
+})();
+/* email */
+(function(){var a=document.getElementById("email");a.href="mailto:"+"yimingfu93"+"@"+"gmail.com";})();
+
+/* topic chips */
+var TOPIC_NAMES={people:"Human-centred intelligence",multimodal:"Multimodal learning",representation:"Representation & interpretability",embodiment:"Embodied interaction"};
+document.querySelectorAll("[data-stages]").forEach(function(el){
+  var box=el.querySelector(".topics");if(!box)return;
+  box.innerHTML=(el.dataset.stages||"").split(" ").filter(Boolean).map(function(k){return '<span data-topic="'+k+'">'+TOPIC_NAMES[k]+'</span>';}).join("");
+});
+
+/* research topics */
+var STAGES={
+  people:{text:"Understanding human needs and designing intelligent systems for meaningful interaction.",
+    rel:[["PACEE","#proj-pacee"],["ScavengerAR","#proj-scavenger"],["Lecture+","#proj-lecture"],["ICHEC 2025","#publications"],["Digital humanities","#proj-rarebooks"],["Embroidery","#proj-embroidery"],["SOUL","#proj-soul"]]},
+  multimodal:{text:"Understanding multimodal architectures and aligning representations across modalities.",
+    rel:[["PerceptEEG","#proj-perceptEEG"],["NumerosityVLM","#proj-numerosity"],["PGT-Net","#proj-pgtnet"]]},
+  representation:{text:"Understanding model representations in relation to human perception and model behaviour.",
+    rel:[["NumerosityVLM","#proj-numerosity"],["PerceptEEG","#proj-perceptEEG"]]},
+  embodiment:{text:"Connecting perception and representation to action and interaction in the physical world.",
+    rel:[["Object-goal navigation","#proj-objectnav"],["iCubWorld","#proj-icub"]]}
+};
+var panel=document.getElementById("arc-panel"),stageBtns=document.querySelectorAll(".stage");
+function renderPanel(key){
+  panel.removeAttribute("data-topic");
+  if(!key){panel.innerHTML='<p class="hint">No theme selected.</p>';return;}
+  panel.setAttribute("data-topic",key);
+  var s=STAGES[key];
+  panel.innerHTML='<p>'+s.text+'</p><p class="rel">Related: '+
+    s.rel.map(function(e){return '<a href="'+e[1]+'">'+e[0]+'</a>';}).join(", ")+
+    ' &nbsp;<button class="clear" type="button">Clear</button></p>';
+  panel.querySelector(".clear").addEventListener("click",function(){setStage(null);});
+}
+function setStage(key){
+  stageBtns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.stage===key?"true":"false");});
+  document.body.classList.toggle("focusing",!!key);
+  document.querySelectorAll(".dimmable").forEach(function(el){
+    el.classList.toggle("match",!!key&&(el.dataset.stages||"").split(" ").indexOf(key)!==-1);
+  });
+  renderPanel(key);
+  reorderPubs(key);
+}
+/* Publications follow the selected theme: related ones first (in their usual order), then the rest.
+   Items glide to their new place so the change is easy to follow; clearing the theme restores the list. */
+var pubList=document.querySelector(".pubs"),pubItems=Array.prototype.slice.call(pubList.querySelectorAll("li.dimmable"));
+function reorderPubs(key){
+  if(!pubItems)return;
+  var still=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var before=pubItems.map(function(li){return li.getBoundingClientRect().top;});
+  pubList.querySelectorAll(".pub-group").forEach(function(g){g.remove();});
+  if(!key){
+    pubList.removeAttribute("data-topic");
+    pubItems.forEach(function(li){pubList.appendChild(li);});
+  }else{
+    pubList.setAttribute("data-topic",key);
+    var hit=pubItems.filter(function(li){return li.classList.contains("match");}),rest=pubItems.filter(function(li){return !li.classList.contains("match");});
+    var g=document.createElement("li");g.className="pub-group";
+    g.innerHTML='<i></i><b>'+TOPIC_NAMES[key]+'</b> · '+hit.length+' publication'+(hit.length===1?'':'s');
+    pubList.appendChild(g);hit.forEach(function(li){pubList.appendChild(li);});
+    if(rest.length){
+      var r=document.createElement("li");r.className="pub-group rest";r.innerHTML='<i></i>Other publications';
+      pubList.appendChild(r);rest.forEach(function(li){pubList.appendChild(li);});
+    }
+  }
+  if(still)return;
+  pubItems.forEach(function(li,i){
+    var d=before[i]-li.getBoundingClientRect().top;
+    if(Math.abs(d)>1){li.style.transition="none";li.style.transform="translateY("+d+"px)";}
+  });
+  pubList.offsetHeight;
+  requestAnimationFrame(function(){pubItems.forEach(function(li){
+    if(!li.style.transform)return;
+    li.style.transition="transform .4s cubic-bezier(.2,.7,.2,1),opacity .25s,background-color .25s,box-shadow .25s,padding .25s";
+    li.style.transform="";
+  });});
+}
+stageBtns.forEach(function(b){b.addEventListener("click",function(){setStage(b.getAttribute("aria-pressed")==="true"?null:b.dataset.stage);});});
+renderPanel(null);
+
+/* project filter: show only the chosen kind */
+(function(){
+  var chips=document.querySelectorAll(".chip"),cards=document.querySelectorAll(".projects:not(.mini-grid) .proj");
+  chips.forEach(function(c){c.addEventListener("click",function(){
+    chips.forEach(function(x){x.setAttribute("aria-pressed",x===c?"true":"false");});
+    var k=c.dataset.kind;
+    cards.forEach(function(card){card.hidden=!(k==="all"||card.dataset.kind.split(" ").indexOf(k)!==-1);});
+  });});
+})();
+
+/* experience timeline */
+var TODAY="2026-10";
+var TL=[
+  {id:"dcu",lane:"education",nm:"Dublin City University | BSc (Hons)",sub:"",title:"BSc (Hons) Computer Applications",org:"Dublin City University",start:"2020-10",end:"2024-06",stages:["people"],
+   points:["Data structures and algorithms, data mining, information retrieval, computer graphics, machine translation","Final-year project: <a href=\"#proj-lecture\">Lecture+</a>, a VR learning platform with an instruction-tuned LLaMA model deployed on AWS"]},
+  {id:"uom",lane:"education",nm:"The University of Manchester | MSc",sub:"",title:"MSc Artificial Intelligence",org:"The University of Manchester",start:"2025-09",end:"2026-09",stages:["multimodal","representation","embodiment"],
+   points:["Machine learning, computer vision and robotics, knowledge representation and reasoning, text mining","Coursework: <a href=\"#proj-icub\">iCub object recognition</a> and a <a href=\"#proj-cnn\">compact residual CNN</a>","Dissertation: <a href=\"perceptEEG.html\">PerceptEEG</a>, zero-shot EEG-to-image retrieval by diagnosing and aligning EEG and visual representations"]},
+
+  {id:"hkust",lane:"research",nm:"Hong Kong University of Science and Technology (Guangzhou)",sub:"HCIX Project",title:"Research Intern, HCIX Project",org:"Hong Kong University of Science and Technology (Guangzhou)",sup:"Dr. Xin Tong",start:"2023-09",end:"2025-09",stages:["people"],
+   points:["Mixed-methods study of autism-related content on RedNote: 200 posts and 44k comments, sentiment analysis and qualitative coding (ICHEC 2025, first author)","Rare-book edition identification: pipeline for 240,000 scanned pages; fine-tuned image classifiers and a vision–language model (OVIS) with SFT and LoRA to ~91% accuracy (Digital Humanities 2025)"]},
+  {id:"thu",lane:"research",nm:"Tsinghua University",sub:"Pervasive HCI Lab",title:"Research Intern",org:"Pervasive HCI Laboratory, Tsinghua University",start:"2025-02",end:"2025-05",stages:["people"],
+   points:["Full-stack parent–AI collaborative system: AI interview functionality in Vue and Flask","Streaming ASR and TTS integration for real-time interaction (UIST 2026)"]},
+  {id:"ucas",lane:"research",nm:"Collaborative research",sub:"",title:"Research Collaborator",org:"In collaboration with the University of Chinese Academy of Sciences",start:"2025-02",end:"2025-05",stages:["multimodal"],
+   points:["CNN and Transformer models for hyperspectral and multispectral denoising, with ablations","PSNR/SSIM evaluation and false-colour analysis (<a href=\"#proj-pgtnet\">PGT-Net</a>, under review at IEEE Transactions on Multimedia)"]},
+  {id:"crl",lane:"research",nm:"The University of Manchester",sub:"Cognitive Robotics Lab",title:"Research Intern",org:"Cognitive Robotics Laboratory, The University of Manchester",sup:"Dr. Zhegong Shangguan",start:"2025-11",end:"2026-09",stages:["multimodal","representation","embodiment"],
+   points:["Diagnostic numerosity benchmark with orthogonal design and visual-cue control","Layer-wise probing, dimensionality reduction and attention analysis of vision–language models","<a href=\"https://arxiv.org/abs/2608.15425\">NumerosityVLM</a> (ECCV 2026 workshop, first author); co-author on <a href=\"#proj-objectnav\">object-goal navigation</a> (TAROS 2026, Best Paper Award)"]},
+
+  {id:"shutterstock",lane:"industry",nm:"Shutterstock",sub:"",title:"Software Engineer Intern",org:"Shutterstock, Dublin",ctx:"Data Intelligence department of a commercial media-asset platform",start:"2023-03",end:"2023-07",stages:[],
+   points:["<b>API development.</b> Implemented release-review functionality in a Java/Spring Boot media metadata service, adding review status, timestamps and rejection reasons across API models and persistence mappings","<b>Testing and deployment.</b> Wrote unit and API tests for backend changes, and contributed through Git pull requests, peer review, and Jenkins-based build and release workflows"],
+   live:["Shutterstock contributor dashboard","https://submit.shutterstock.com/dashboard"]},
+  {id:"pku",lane:"industry",nm:"PKU",sub:"",title:"Software Engineer Intern",org:"Institute for Artificial Intelligence, Peking University, China",ctx:"Poem-generation platform",start:"2024-03",end:"2024-05",stages:[],
+   points:["Backend modules for poem generation, rewriting and community sharing in Python (FastAPI)","Local LLM integration, MongoDB, RESTful API design and API rate limiting","Launched on schedule"],
+   live:["poem.pkudh.org","https://poem.pkudh.org"]},
+  {id:"mahanova",lane:"industry",nm:"MahaNova",sub:"",title:"Artificial Intelligence Engineer",org:"MahaNova, China",ctx:"LLM agents, retrieval and model integration at a MiraclePlus-backed startup",start:"2024-05",end:"2025-07",stages:[],
+   points:["<b>Agent prototyping.</b> Prototyped MCP client–server integrations for enterprise information retrieval, implementing tool invocation and resource access and testing authentication flows","<b>Knowledge retrieval and LLM integration.</b> Built knowledge-assistant workflows spanning intent recognition, query rewriting, web retrieval, reranking and source attribution; developed document-processing pipelines for mixed text-and-image documents in five formats, and a unified interface for six LLM backends with standardised streaming and non-streaming responses","<b>Inference experiments.</b> Ran Transformer inference and KV-cache reuse experiments, investigating cache-format compatibility, memory usage and inference timing"],
+   live:["histella.cn","https://histella.cn"]},
+  {id:"latencore",lane:"industry",nm:"Latencore",sub:"",title:"VLA R&D Intern",org:"Latencore, Cambridge",start:"2026-09",end:null,stages:[],
+   points:["Built the UMI rig: soldering, 3D printing, assembly and debugging; magnetic encoders, industrial cameras and VR tracking","Collected demonstration data with the rig","Introduced an audio modality, with validity and interpretability analysis","Built the multimodal fusion framework and trained the models, evaluated on a real robot"]}
+];
+var LANES=[["education","Education"],["research","Research"],["industry","Industry"]];
+var MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function m(s){var p=s.split("-");return (+p[0])*12+(+p[1]-1);}
+function fmt(s){var p=s.split("-");return MON[+p[1]-1]+" "+p[0];}
+function span(it){return fmt(it.start)+" – "+(it.end?fmt(it.end):"present");}
+/* Axis from Jan 2020. The years 2020-2022 take half the space of one year (dotted baseline); every later year is U px wide.
+   The timeline scrolls sideways when it is wider than the page and opens on the most recent end. */
+var T0=m("2020-01"),TB=m("2023-01"),T1=m("2027-01"),PAD=24,GAP=12,UMIN=250,BGAP=4,LC=100,EARLY=0.5,BARH=28,CAPH=18,ROWGAP=8,LTOP=10;
+var YEARS=[2020,2023,2024,2025,2026,2027],GUIDES=[2023,2024,2025,2026],U=UMIN;
+function units(v){return v<=TB?Math.max(0,(v-T0)/(TB-T0))*EARLY:EARLY+(Math.min(v,T1)-TB)/12;}
+function X(v){return PAD+units(v)*U;}
+var scroller=document.getElementById("tl-scroll"),grid=document.getElementById("tl-grid"),detail=document.getElementById("tl-detail"),list=document.getElementById("tl-list");
+var order=TL.slice().sort(function(a,b){return m(a.start)-m(b.start)||m(a.end||"2099-01")-m(b.end||"2099-01");}),selected=null,bars={},pinEnd=true;
+function liveLink(it){return it.live?'<div class="live">Live product: <a href="'+it.live[1]+'">'+it.live[0]+'</a></div>':'';}
+function supLine(it,tag){return it.sup?'<'+tag+' class="sup">Supervisor: '+it.sup+'</'+tag+'>':'';}
+
+(function build(){
+  var html='<div class="tl-corner"></div><div class="tl-axis" aria-hidden="true"><span class="base early"></span><span class="base main"></span></div>';
+  LANES.forEach(function(L){
+    html+='<div class="tl-lane-label" data-lane="'+L[0]+'">'+L[1]+'</div><div class="tl-lane" data-lane="'+L[0]+'">';
+    TL.filter(function(i){return i.lane===L[0];}).sort(function(a,b){return m(a.start)-m(b.start);}).forEach(function(it){
+      it._s=m(it.start);it._e=it.end?m(it.end)+1:T1;
+      html+='<button class="tl-item dimmable'+(it.end?'':' ongoing')+'" role="tab" data-id="'+it.id+'" data-lane="'+it.lane+'" data-stages="'+it.stages.join(" ")+'"'+
+        ' title="'+it.title+', '+span(it)+'" aria-label="'+it.title+', '+it.org+', '+span(it)+'" aria-selected="false" tabindex="-1">'+
+        '<span class="bar"></span><span class="nm">'+it.nm+'</span><span class="cap">'+(it.sub?'<span class="cs">'+it.sub+'</span>':'')+'</span></button>';
+    });
+    html+='</div>';
+  });
+  html+='<div class="tl-guides" aria-hidden="true"></div>';
+  grid.innerHTML=html;
+  layoutTL();
+  window.addEventListener("resize",layoutTL);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layoutTL);
+  window.addEventListener("load",layoutTL);
+  if("IntersectionObserver" in window)new IntersectionObserver(function(e){if(e[0].isIntersecting&&pinEnd)scroller.scrollLeft=scroller.scrollWidth;}).observe(scroller);
+  ["wheel","touchstart","pointerdown","keydown"].forEach(function(e){scroller.addEventListener(e,function(){pinEnd=false;},{passive:true});});
+  scroller.addEventListener("scroll",function(){scroller.classList.toggle("scrolled",scroller.scrollLeft>2);},{passive:true});
+  grid.setAttribute("role","tablist");grid.setAttribute("aria-label","Experience timeline");
+  grid.querySelectorAll(".tl-item").forEach(function(b){
+    bars[b.dataset.id]=b;
+    b.addEventListener("click",function(){select(b.dataset.id,false);});
+    b.addEventListener("keydown",function(ev){
+      if(ev.key==="ArrowRight"||ev.key==="ArrowLeft"){ev.preventDefault();step(ev.key==="ArrowRight"?1:-1,true);}
+    });
+  });
+  list.innerHTML=order.slice().reverse().map(function(it){
+    return '<li class="dimmable" data-stages="'+it.stages.join(" ")+'" data-lane="'+it.lane+'"><button type="button" aria-expanded="false"><span class="sw"></span><span class="ti">'+it.title+'</span><span class="su">'+it.org+', '+span(it)+'</span></button>'+
+      '<div class="more" hidden>'+(it.ctx?'<p class="ctx">'+it.ctx+'</p>':'')+supLine(it,"p")+'<ul>'+it.points.map(function(p){return '<li>'+p+'</li>';}).join("")+'</ul>'+liveLink(it)+'</div></li>';
+  }).join("");
+  list.querySelectorAll("button").forEach(function(b){
+    b.addEventListener("click",function(){
+      var open=b.getAttribute("aria-expanded")==="true";
+      b.setAttribute("aria-expanded",open?"false":"true");b.nextElementSibling.hidden=open;
+    });
+  });
+})();
+
+/* Placement: the institution is centred inside its bar (bold, black); the lab or programme is centred under the bar (grey).
+   A role too short for its name gets a bar just wide enough, grown to the right or, if that side is taken, to the left;
+   roles that only touch for a month sit side by side with a thin gap. Rows are packed so nothing overlaps,
+   and each row is only as tall as it needs to be. */
+function layoutTL(){
+  if(!scroller.clientWidth)return;
+  var avail=scroller.clientWidth-LC;
+  U=Math.max(UMIN,(avail-2*PAD)/(units(T1)+0.4));
+  var month=U/12,maxR=X(T1)+PAD;
+  grid.querySelectorAll(".tl-lane").forEach(function(lane){
+    var rows=[];   // per row: {bars:[[a,z]], caps:[[a,z]], cap:bool}
+    var placed=[];
+    function fitBar(row,a,z){
+      for(var pass=0;pass<4;pass++){
+        var moved=false,bad=false;
+        (row.bars).forEach(function(iv){
+          if(bad||!(a<iv[1]+BGAP&&z+BGAP>iv[0]))return;
+          if(a<iv[0]&&z-iv[0]<=month+BGAP){var d=z-(iv[0]-BGAP);a-=d;z-=d;moved=true;}        // touching on my right: slide left
+          else if(z>iv[1]&&iv[1]-a<=month+BGAP){var e=(iv[1]+BGAP)-a;a+=e;z+=e;moved=true;}  // touching on my left: slide right
+          else bad=true;
+        });
+        if(bad||a<4)return null;
+        if(!moved)return [a,z];
+      }
+      return null;
+    }
+    // longer roles claim the first rows, so the main line of each lane stays stable
+    Array.prototype.slice.call(lane.querySelectorAll(".tl-item")).map(function(b){
+      return [b,TL.filter(function(i){return i.id===b.dataset.id;})[0]];
+    }).sort(function(p,q){return (q[1]._e-q[1]._s)-(p[1]._e-p[1]._s)||p[1]._s-q[1]._s;}).forEach(function(pair){
+      var b=pair[0],it=pair[1];
+      var nm=b.querySelector(".nm"),cap=b.querySelector(".cap"),hasSub=!!b.querySelector(".cs");
+      nm.style.width="auto";cap.hidden=!hasSub;
+      var need=nm.scrollWidth+16,a0=X(it._s),z0=X(it._e)-3,cw=hasSub?cap.scrollWidth:0;
+      var cands=z0-a0>=need?[[a0,z0]]:[[a0,a0+need],[z0-need,z0]];
+      var pick=null,ri=0;
+      for(ri=0;!pick;ri++){
+        var row=rows[ri]||(rows[ri]={bars:[],caps:[],cap:false});
+        for(var k=0;k<cands.length&&!pick;k++){
+          var bz=fitBar(row,cands[k][0],cands[k][1]);if(!bz)continue;
+          var cl=Math.max(4,(bz[0]+bz[1])/2-cw/2),cr=cl+cw;
+          if(cw&&row.caps.some(function(iv){return cl<iv[1]+GAP&&cr+GAP>iv[0];}))continue;
+          pick={a:bz[0],z:bz[1],cl:cl,cr:cr,row:ri};
+        }
+      }
+      var row=rows[pick.row];row.bars.push([pick.a,pick.z]);if(cw){row.caps.push([pick.cl,pick.cr]);row.cap=true;}
+      placed.push({b:b,p:pick,cw:cw,nm:nm,cap:cap});
+      maxR=Math.max(maxR,pick.z+PAD,cw?pick.cr+PAD:0);
+    });
+    var tops=[],y=LTOP;
+    rows.forEach(function(r,i){tops[i]=y;y+=BARH+(r.cap?CAPH:0)+ROWGAP;});
+    placed.forEach(function(o){
+      var p=o.p,L=Math.min(p.a,o.cw?p.cl:p.a),R=Math.max(p.z,o.cw?p.cr:p.z);
+      o.b.style.left=L+"px";o.b.style.width=(R-L)+"px";o.b.style.top=tops[p.row]+"px";
+      var bar=o.b.querySelector(".bar");bar.style.left=(p.a-L)+"px";bar.style.width=(p.z-p.a)+"px";
+      o.nm.style.left=(p.a-L)+"px";o.nm.style.width=(p.z-p.a)+"px";
+      o.cap.style.left=(p.cl-L)+"px";
+    });
+    lane.style.height=(y-ROWGAP+10)+"px";
+  });
+  var W=Math.max(avail,Math.ceil(maxR));
+  grid.style.width=(LC+W)+"px";grid.style.gridTemplateColumns=LC+"px "+W+"px";
+  var axis=grid.querySelector(".tl-axis");
+  axis.querySelectorAll(".yr,.tick").forEach(function(e){e.remove();});
+  var early=axis.querySelector(".early"),main=axis.querySelector(".main");
+  early.style.left=PAD+"px";early.style.width=(X(TB)-PAD)+"px";
+  main.style.left=X(TB)+"px";main.style.width=(W-PAD-X(TB))+"px";
+  YEARS.forEach(function(y){
+    var s=document.createElement("span");s.className="yr";s.textContent=y;s.style.left=X(y*12)+"px";axis.appendChild(s);
+    var t=document.createElement("span");t.className="tick";t.style.left=X(y*12)+"px";axis.appendChild(t);
+  });
+  var g=grid.querySelector(".tl-guides"),top=axis.offsetTop+axis.offsetHeight-6;
+  g.style.left=LC+"px";g.style.width=W+"px";g.style.top=top+"px";g.style.height=(grid.offsetHeight-top)+"px";
+  g.innerHTML=GUIDES.map(function(y){return '<i style="left:'+X(y*12)+'px"></i>';}).join("")+
+    '<span class="tl-now" style="left:'+X(m(TODAY)+0.5)+'px"></span>';
+  if(pinEnd)scroller.scrollLeft=scroller.scrollWidth;
+}
+function markLabels(){}
+function select(id,focus){
+  selected=id;
+  Object.keys(bars).forEach(function(k){var on=k===id;bars[k].setAttribute("aria-selected",on?"true":"false");bars[k].tabIndex=on?0:-1;});
+  if(focus)bars[id].focus();
+  markLabels();
+  var it=TL.filter(function(i){return i.id===id;})[0];
+  detail.setAttribute("data-lane",it.lane);
+  detail.innerHTML='<div><h3>'+it.title+'</h3><div class="org">'+it.org+'</div>'+(it.ctx?'<div class="ctx">'+it.ctx+'</div>':'')+supLine(it,"div")+'</div><div class="when">'+span(it)+'</div>'+
+    '<ul>'+it.points.map(function(p){return '<li>'+p+'</li>';}).join("")+'</ul>'+liveLink(it)+
+    '<div class="tl-nav"><button type="button" data-d="-1">Earlier</button><button type="button" data-d="1">Later</button></div>';
+  detail.querySelectorAll(".tl-nav button").forEach(function(b){b.addEventListener("click",function(){step(+b.dataset.d,false);});});
+}
+function step(d,focus){var i=order.findIndex(function(x){return x.id===selected;});i=(i+d+order.length)%order.length;select(order[i].id,focus);}
+select("crl",false);
+</script>
+<script>
+/* Analytics (GoatCounter, no cookies). Downloads of PDFs and clicks on videos are counted as events.
+   To change the account, edit data-goatcounter below. */
+document.querySelectorAll('a[href$=".pdf"],a[href*="youtu"]').forEach(function(a){
+  var h=a.getAttribute("href");
+  a.setAttribute("data-goatcounter-click",(h.indexOf("youtu")>-1?"video ":"download ")+h);
+  a.setAttribute("data-goatcounter-title",(a.textContent||a.getAttribute("aria-label")||"").trim()||h);
+});
+</script>
+<script data-goatcounter="https://fuy3.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
